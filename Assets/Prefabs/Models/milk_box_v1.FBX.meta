@@ -1,46 +1,22 @@
 fileFormatVersion: 2
-guid: fe505d6856737ea44aaeca2425eb7ec1
-timeCreated: 1492887741
+guid: c6d21b63b32967a41be41a7496c95f83
+timeCreated: 1492926175
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: fridgebody
-    100004: glass platform
-    100006: lamp
-    100008: platform1
-    100010: platform2
-    100012: platform3
-    100014: pocekt
-    400000: //RootNode
-    400002: fridgebody
-    400004: glass platform
-    400006: lamp
-    400008: platform1
-    400010: platform2
-    400012: platform3
-    400014: pocekt
-    2300000: fridgebody
-    2300002: glass platform
-    2300004: lamp
-    2300006: platform1
-    2300008: platform2
-    2300010: platform3
-    2300012: pocekt
-    3300000: fridgebody
-    3300002: glass platform
-    3300004: lamp
-    3300006: platform1
-    3300008: platform2
-    3300010: platform3
-    3300012: pocekt
-    4300000: fridgebody
-    4300002: glass platform
-    4300004: pocekt
-    4300006: platform1
-    4300008: platform2
-    4300010: platform3
-    4300012: lamp
+    100000: korek
+    100002: milk_box
+    100004: //RootNode
+    400000: korek
+    400002: milk_box
+    400004: //RootNode
+    2300000: korek
+    2300002: milk_box
+    3300000: korek
+    3300002: milk_box
+    4300000: milk_box
+    4300002: korek
     9500000: //RootNode
   materials:
     importMaterials: 1
