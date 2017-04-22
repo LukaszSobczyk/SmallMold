@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class InputController : MonoBehaviour {
     public float bodyMoveSpeed=1.0f;
-    public float rotationSpeed=1.0f;
-   
+    public float lrrotationOffset=1.0f;//y
+    public float udrotationOffset = 1.0f;//x
+
     private Rigidbody rigi;
     private GameObject lHand;
     private GameObject rHand;
@@ -93,21 +94,30 @@ public class InputController : MonoBehaviour {
         Vector3 targetDir;
         if ((Input.GetMouseButton(0)) && !(Input.GetMouseButton(1)))
         {
+            //lewa
             targetDir = lHand.transform.position;
+            transform.LookAt(targetDir);
+            transform.Rotate(new Vector3(0.0f, lrrotationOffset, 0.0f));
         }
         else if (!(Input.GetMouseButton(0)) && (Input.GetMouseButton(1)))
         {
+            //prawa
             targetDir = rHand.transform.position;
+            transform.LookAt(targetDir);
+            transform.Rotate(new Vector3(0.0f, -lrrotationOffset,0.0f));
         }
         else
         {
+            //obie
             targetDir = (lHand.transform.position + rHand.transform.position) / 2.0f;
+            if (rigi.useGravity)
+            {
+                targetDir.y = this.transform.position.y;
+            }
+            transform.LookAt(targetDir);
         }
-        if (rigi.useGravity)
-        {
-            targetDir.y = this.transform.position.y;
-        }
-        transform.LookAt(targetDir);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
+
     }
     void PositionCorrection()
     {
