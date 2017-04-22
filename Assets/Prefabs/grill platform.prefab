@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4478801478751288}
   - component: {fileID: 33107049048124814}
   - component: {fileID: 23989675285624432}
-  - component: {fileID: 64969783786112602}
   m_Layer: 0
   m_Name: grill platform
   m_TagString: Untagged
@@ -55,7 +54,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 3dfb074386c232e438b2c4450c09f6f8, type: 2}
+  - {fileID: 2100000, guid: 46bf799d4fdd8f441a59139c1de56a3d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -79,18 +78,4 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376700393825814}
-  m_Mesh: {fileID: 4300006, guid: 34a7e4840e07c334a8f43ed3b0faf870, type: 3}
---- !u!64 &64969783786112602
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1376700393825814}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300006, guid: 34a7e4840e07c334a8f43ed3b0faf870, type: 3}
+  m_Mesh: {fileID: 4300006, guid: fe505d6856737ea44aaeca2425eb7ec1, type: 3}
