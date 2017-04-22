@@ -3,80 +3,109 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InputController : MonoBehaviour {
-    public float speed = 6.0F;
-    public float jumpSpeed = 8.0F;
-    public float gravity = 20.0F;
-    public float forcefactor = 30.0f;
+    public float bodyMoveSpeed=1.0f;
+    public float rotationSpeed=1.0f;
+   
     private Rigidbody rigi;
-    // Use this for initialization
+    private GameObject lHand;
+    private GameObject rHand;
+
+
+    private float distanceFromPoint;
+    private Vector3 lhzeropos;
+    private Vector3 rhzeropos;
+    private Quaternion lhzerotation;
+    private Quaternion rhzerotation;
+    LineRenderer dupa;
     void Start ()
     {
+        dupa = gameObject.AddComponent<LineRenderer>();
         rigi = this.GetComponent<Rigidbody>();
+        lHand = GameObject.Find("LHand").gameObject;
+        rHand = GameObject.Find("RHand").gameObject;
+        lhzeropos = lHand.transform.position - this.transform.position;
+        rhzeropos = rHand.transform.position - this.transform.position;
+        lhzerotation = lHand.transform.localRotation;
+        rhzerotation = rHand.transform.localRotation;
+        distanceFromPoint = ((lHand.transform.position + rHand.transform.position) / 2.0f - transform.position).magnitude;
     }
-    private Vector3 GetMeshColliderNormal(RaycastHit hit)
-    {
-        MeshCollider collider = (MeshCollider)hit.collider;
-        Mesh mesh = collider.sharedMesh;
-        Vector3[] normals = mesh.normals;
-        int[] triangles = mesh.triangles;
-
-
-        Vector3 n0 = normals[triangles[hit.triangleIndex * 3 + 0]];
-        Vector3 n1 = normals[triangles[hit.triangleIndex * 3 + 1]];
-        Vector3 n2 = normals[triangles[hit.triangleIndex * 3 + 2]];
-        Vector3 baryCenter = hit.barycentricCoordinate;
-        Vector3 interpolatedNormal = n0 * baryCenter.x + n1 * baryCenter.y + n2 * baryCenter.z;
-        interpolatedNormal.Normalize();
-        interpolatedNormal = hit.transform.TransformDirection(interpolatedNormal);
-        return interpolatedNormal;
-
-    }
+    
     void Update ()
     {
-        //Vector3 moveDirection;
-        //moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        //moveDirection = transform.TransformDirection(moveDirection);
-        //this.rigidbody
-        Vector3 movement=new Vector3();
-        if(Input.GetAxis("Horizontal")!=0)
+        //RotationCorrection();
+        if (Input.GetMouseButtonDown(0))
         {
-            if(Input.GetAxis("Horizontal")* rigi.velocity.x<0)
-            {
-                rigi.velocity = new Vector3(0.0f, rigi.velocity.y, rigi.velocity.z);
-            }
-            movement.x = Input.GetAxis("Horizontal");
+            InputResult(lHand);
+            rigi.isKinematic = true;
         }
-        else
+        else if(!(Input.GetMouseButton(0)) && !(Input.GetMouseButtonDown(0)))
         {
-            rigi.velocity = new Vector3(0.0f,rigi.velocity.y, rigi.velocity.z);
+            lHand.transform.position = this.transform.position+lhzeropos;
+            //lHand.transform.position = lhzerotation;
         }
-        if (Input.GetAxis("Vertical") != 0)
+        if (Input.GetMouseButtonDown(1))
         {
-            if (Input.GetAxis("Vertical") * rigi.velocity.z < 0)
-            {
-                rigi.velocity = new Vector3(rigi.velocity.x, rigi.velocity.y, 0.0f);
-            }
-            movement.z = Input.GetAxis("Vertical");
+            InputResult(rHand);
+            PositionCorrection();
+            rigi.isKinematic = true;
         }
-        else
+        else if (!(Input.GetMouseButton(1))&& !(Input.GetMouseButtonDown(1)))
         {
-            rigi.velocity = new Vector3(rigi.velocity.x, rigi.velocity.y, 0.0f);
+            rHand.transform.position = this.transform.position+rhzeropos;
+            //rHand.transform.localRotation = rhzerotation;
         }
-        rigi.AddForce(movement * forcefactor*Time.fixedDeltaTime);
-        //Debug.Log(movement);
+        if (Input.GetMouseButton(0)|| Input.GetMouseButton(1)&& rigi.isKinematic)
+        {
+            PositionCorrection();
+        }
+        else if (!(Input.GetMouseButton(0)) && !(Input.GetMouseButton(1)))
+        {
+            rigi.isKinematic = false;
+        }
     }
-    void OnTriggerStay(Collider coll)
+    void RotationCorrection()
     {
-        if(coll.CompareTag("Enviroment")&& Input.GetButton("Jump"))
+        Vector3 targetDir = (lHand.transform.position + rHand.transform.position) / 2.0f - transform.position;
+        if (!rigi.isKinematic)
         {
+            targetDir.y = this.transform.position.y;
+        }
+        float step = rotationSpeed * Time.fixedDeltaTime;
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0F);
+        transform.rotation = Quaternion.LookRotation(newDir);
+    }
+    void PositionCorrection()
+    {
+        Vector3 target = (lHand.transform.position + rHand.transform.position) / 2.0f - (lHand.transform.forward+ rHand.transform.forward).normalized*distanceFromPoint;
+        transform.position = Vector3.MoveTowards(transform.position, target, bodyMoveSpeed * Time.fixedDeltaTime);
+    }
+    //void OnTriggerStay(Collider coll)
+    //{
+    //    if(coll.CompareTag("Enviroment")&& Input.GetButton("Jump"))
+    //    {
+    //        this.GetComponent<Rigidbody>().AddForce(0, 30, 0);
+    //    }
+    //}
+    void HandRotation(GameObject hand)
+    {
+        Vector3 targetDir = (hand.transform.position - gameObject.transform./*FindChild("HandPoint").*/position).normalized+ hand.transform.position;
+        hand.transform.LookAt(targetDir);
+    }
 
-            this.GetComponent<Rigidbody>().AddForce(0, 30, 0);
-        }
-    }
-    void InputResult(Vector3 inputPos)
+    void InputResult(GameObject hand)
     {
-        Vector3 touchPosWorld = Camera.main.ScreenToWorldPoint(inputPos);
-        Vector2 touchPosWorld2D = new Vector2(touchPosWorld.x, touchPosWorld.y);
-        RaycastHit2D hitInformation = Physics2D.Raycast(touchPosWorld2D, Camera.main.transform.forward);
+        RaycastHit hit;
+        Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward,out hit);
+        //Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward);
+        
+        dupa.SetPosition(0, gameObject.transform.position);
+        dupa.SetPosition(1, hit.point);
+        //Physics.Raycast(gameObject.transform.FindChild("HandPoint").position, (hit.point- gameObject.transform.FindChild("HandPoint").position).normalized, out hit);
+        if (hit.collider.CompareTag("Enviroment"))
+        {
+            hand.transform.position = hit.point;
+            //hand.transform.position = Vector3.MoveTowards(hand.transform.position, hit.point, 30 * Time.fixedDeltaTime);
+            HandRotation(hand);
+        }
     }
 }
