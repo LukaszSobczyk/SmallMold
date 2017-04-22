@@ -1,37 +1,47 @@
 fileFormatVersion: 2
-guid: 99428d4912a24984091a6b5c49afde07
-timeCreated: 1492858039
+guid: fe9669278993c174493d003949132ea1
+timeCreated: 1492899107
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Box001
-    100004: Box002
-    100006: Box003
-    100008: Box004
-    100010: Object001
+    100002: miska
+    100004: pomidor1
+    100006: pomidor2
+    100008: pomidor3
+    100010: "szypu\u0142ka1"
+    100012: "szypu\u0142ka2"
+    100014: "szypu\u0142ka3"
     400000: //RootNode
-    400002: Box001
-    400004: Box002
-    400006: Box003
-    400008: Box004
-    400010: Object001
-    2300000: Box001
-    2300002: Box002
-    2300004: Box003
-    2300006: Box004
-    2300008: //RootNode
-    3300000: Box001
-    3300002: Box002
-    3300004: Box003
-    3300006: Box004
-    3300008: //RootNode
-    4300000: Box001
-    4300002: Box002
-    4300004: Box003
-    4300006: Box004
-    4300008: banany
+    400002: miska
+    400004: pomidor1
+    400006: pomidor2
+    400008: pomidor3
+    400010: "szypu\u0142ka1"
+    400012: "szypu\u0142ka2"
+    400014: "szypu\u0142ka3"
+    2300000: miska
+    2300002: pomidor1
+    2300004: pomidor2
+    2300006: pomidor3
+    2300008: "szypu\u0142ka1"
+    2300010: "szypu\u0142ka2"
+    2300012: "szypu\u0142ka3"
+    3300000: miska
+    3300002: pomidor1
+    3300004: pomidor2
+    3300006: pomidor3
+    3300008: "szypu\u0142ka1"
+    3300010: "szypu\u0142ka2"
+    3300012: "szypu\u0142ka3"
+    4300000: miska
+    4300002: pomidor2
+    4300004: "szypu\u0142ka2"
+    4300006: pomidor3
+    4300008: "szypu\u0142ka3"
+    4300010: "szypu\u0142ka1"
+    4300012: pomidor1
     9500000: //RootNode
   materials:
     importMaterials: 1

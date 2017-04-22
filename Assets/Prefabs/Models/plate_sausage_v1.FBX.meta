@@ -1,37 +1,34 @@
 fileFormatVersion: 2
-guid: 99428d4912a24984091a6b5c49afde07
-timeCreated: 1492858039
+guid: e298537ae2eaaea43aa1a78c32940561
+timeCreated: 1492906987
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Box001
-    100004: Box002
-    100006: Box003
-    100008: Box004
-    100010: Object001
-    400000: //RootNode
-    400002: Box001
-    400004: Box002
-    400006: Box003
-    400008: Box004
-    400010: Object001
-    2300000: Box001
-    2300002: Box002
-    2300004: Box003
-    2300006: Box004
-    2300008: //RootNode
-    3300000: Box001
-    3300002: Box002
-    3300004: Box003
-    3300006: Box004
-    3300008: //RootNode
-    4300000: Box001
-    4300002: Box002
-    4300004: Box003
-    4300006: Box004
-    4300008: banany
+    100000: ketchup
+    100002: Particle View 001
+    100004: "par\xF3wa1"
+    100006: "par\xF3wa2"
+    100008: //RootNode
+    100010: talerz
+    400000: ketchup
+    400002: Particle View 001
+    400004: "par\xF3wa1"
+    400006: "par\xF3wa2"
+    400008: //RootNode
+    400010: talerz
+    2300000: ketchup
+    2300002: "par\xF3wa1"
+    2300004: "par\xF3wa2"
+    2300006: talerz
+    3300000: ketchup
+    3300002: "par\xF3wa1"
+    3300004: "par\xF3wa2"
+    3300006: talerz
+    4300000: talerz
+    4300002: "par\xF3wa2"
+    4300004: "par\xF3wa1"
+    4300006: ketchup
     9500000: //RootNode
   materials:
     importMaterials: 1
