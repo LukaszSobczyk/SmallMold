@@ -16,10 +16,10 @@ public class InputController : MonoBehaviour {
     private Vector3 rhzeropos;
     private Quaternion lhzerotation;
     private Quaternion rhzerotation;
-    LineRenderer dupa;
+    //LineRenderer dupa;
     void Start ()
     {
-        dupa = gameObject.AddComponent<LineRenderer>();
+        //dupa = gameObject.AddComponent<LineRenderer>();
         rigi = this.GetComponent<Rigidbody>();
         lHand = GameObject.Find("LHand").gameObject;
         rHand = GameObject.Find("RHand").gameObject;
@@ -32,41 +32,44 @@ public class InputController : MonoBehaviour {
     
     void Update ()
     {
-        //RotationCorrection();
+        RotationCorrection();
         if (Input.GetMouseButtonDown(0))
         {
             InputResult(lHand);
-            rigi.isKinematic = true;
+            rigi.useGravity = false;
         }
         else if(!(Input.GetMouseButton(0)) && !(Input.GetMouseButtonDown(0)))
         {
             lHand.transform.position = this.transform.position+lhzeropos;
-            //lHand.transform.position = lhzerotation;
         }
         if (Input.GetMouseButtonDown(1))
         {
             InputResult(rHand);
             PositionCorrection();
-            rigi.isKinematic = true;
+            rigi.useGravity = false;
         }
         else if (!(Input.GetMouseButton(1))&& !(Input.GetMouseButtonDown(1)))
         {
             rHand.transform.position = this.transform.position+rhzeropos;
             //rHand.transform.localRotation = rhzerotation;
         }
-        if (Input.GetMouseButton(0)|| Input.GetMouseButton(1)&& rigi.isKinematic)
+        if (Input.GetMouseButton(0)|| Input.GetMouseButton(1)&& !rigi.useGravity)
         {
             PositionCorrection();
         }
         else if (!(Input.GetMouseButton(0)) && !(Input.GetMouseButton(1)))
         {
-            rigi.isKinematic = false;
+            rigi.useGravity = true;
+        }
+        if ((Input.GetMouseButtonUp(0)) && !(Input.GetMouseButton(1)) || (Input.GetMouseButtonUp(1)) && !(Input.GetMouseButton(0)))
+        {
+            rigi.velocity = Vector3.zero;
         }
     }
     void RotationCorrection()
     {
         Vector3 targetDir = (lHand.transform.position + rHand.transform.position) / 2.0f - transform.position;
-        if (!rigi.isKinematic)
+        if (!rigi.useGravity)
         {
             targetDir.y = this.transform.position.y;
         }
@@ -88,23 +91,21 @@ public class InputController : MonoBehaviour {
     //}
     void HandRotation(GameObject hand)
     {
-        Vector3 targetDir = (hand.transform.position - gameObject.transform./*FindChild("HandPoint").*/position).normalized+ hand.transform.position;
+        Vector3 targetDir = (hand.transform.position - gameObject.transform.position).normalized+ hand.transform.position;
         hand.transform.LookAt(targetDir);
+        hand.transform.rotation = Quaternion.Euler(hand.transform.rotation.eulerAngles.x, hand.transform.rotation.eulerAngles.y, 0);
     }
 
     void InputResult(GameObject hand)
     {
         RaycastHit hit;
         Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward,out hit);
-        //Debug.DrawRay(Camera.main.transform.position, Camera.main.transform.forward);
         
-        dupa.SetPosition(0, gameObject.transform.position);
-        dupa.SetPosition(1, hit.point);
-        //Physics.Raycast(gameObject.transform.FindChild("HandPoint").position, (hit.point- gameObject.transform.FindChild("HandPoint").position).normalized, out hit);
+        //dupa.SetPosition(0, gameObject.transform.position);
+        //dupa.SetPosition(1, hit.point);
         if (hit.collider.CompareTag("Enviroment"))
         {
             hand.transform.position = hit.point;
-            //hand.transform.position = Vector3.MoveTowards(hand.transform.position, hit.point, 30 * Time.fixedDeltaTime);
             HandRotation(hand);
         }
     }
