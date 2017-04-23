@@ -10,7 +10,7 @@ public class SeedScoreSystem : MonoBehaviour {
     public int[] playerLevelScore;
     public int seedLose = 3;
     public GameObject scoreText;
-
+    public GameObject mainPrgressBar;
     public void AddSeed()
     {
         collectedSeeds++;
@@ -27,6 +27,15 @@ public class SeedScoreSystem : MonoBehaviour {
     {
         if(scoreText!=null)
             scoreText.GetComponent<Text>().text = collectedSeeds.ToString();
+    }
+    void ActualizeMainBar()
+    {
+        if (mainPrgressBar != null)
+        {
+            //float percentage;
+            //percentage
+            //mainPrgressBar.GetComponent<Image>().fillAmount = percentage;
+        }
     }
     private void SetLevel()
     {
