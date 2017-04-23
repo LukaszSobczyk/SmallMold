@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Materials/textures/sausage/plate_sausage_v1_DefaultMaterial_AO.png.meta
+guid: 9cdb9fa3d5ccaab4ebbd13d5b1e8d815
+timeCreated: 1492998879
+=======
 guid: 54692aa79ca39844dbcd1156649f7a6c
 timeCreated: 1492965000
+>>>>>>> f4820f58f6c2d7a87678b4239b0c2ae47ae1e061:Assets/Materials/textures/sausage/plate_sausage_v1_DefaultMaterial_AO.png.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
