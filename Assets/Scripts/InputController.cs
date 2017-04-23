@@ -7,6 +7,7 @@ public class InputController : MonoBehaviour {
     public float lrrotationOffset=1.0f;//y
     public float udrotationOffset = 1.0f;//x
     public float jumpForce = 60.0f;
+    public float catchDistance = 1.0f;
 
     private Rigidbody rigi;
     private GameObject lHand;
@@ -143,7 +144,9 @@ public class InputController : MonoBehaviour {
             if (hit.collider.CompareTag("Enviroment")|| hit.collider.CompareTag("Infectable"))
             {
                 //Debug.Log("First: " + hit.collider.gameObject);
-                if (Physics.Raycast(transform.FindChild("Eye").position, hit.point-transform.FindChild("Eye").position, out hit))
+                Ray ray = new Ray(transform.FindChild("Eye").position, hit.point - transform.FindChild("Eye").position);
+                if (Physics.Raycast(ray, out hit, catchDistance))
+                //if (Physics.Raycast(transform.FindChild("Eye").position, hit.point-transform.FindChild("Eye").position, out hit))
                 {
                     if (hit.collider.CompareTag("Enviroment") || hit.collider.CompareTag("Infectable"))
                     {
