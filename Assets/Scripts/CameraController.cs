@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour {
         {
             float x = 5 * Input.GetAxis("Mouse X");
             cameraPivot.transform.Rotate(0, x, 0, Space.World);
-            player.transform.Rotate(0, x, 0);
+            //player.transform.Rotate(0, x, 0);
         }
         if (Input.GetAxis("Mouse Y") != 0)
         {
