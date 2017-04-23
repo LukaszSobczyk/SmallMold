@@ -18,4 +18,12 @@ public class VomitController : MonoBehaviour {
 
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Infectable")
+        {
+            other.gameObject.GetComponent<InfectionController>().StopInfecting();
+        }
+    }
+
 }
