@@ -120,14 +120,14 @@ public class InputController : MonoBehaviour {
         }
         transform.position = Vector3.MoveTowards(transform.position, target, bodyMoveSpeed * Time.fixedDeltaTime);
     }
-    void OnTriggerStay(Collider coll)
-    {
-        if ((coll.CompareTag("Enviroment")||coll.CompareTag("Infectable")) && Input.GetButton("Jump"))
-        {
+    //void OnTriggerStay(Collider coll)
+    //{
+    //    if ((coll.CompareTag("Enviroment")||coll.CompareTag("Infectable")) && Input.GetButton("Jump"))
+    //    {
 
-            this.GetComponent<Rigidbody>().AddForce((transform.forward+transform.up)*jumpForce);
-        }
-    }
+    //        this.GetComponent<Rigidbody>().AddForce((transform.forward+transform.up)*jumpForce);
+    //    }
+    //}
     void HandRotation(GameObject hand)
     {
         Vector3 targetDir = (hand.transform.position - gameObject.transform.position).normalized+ hand.transform.position;
