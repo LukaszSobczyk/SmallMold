@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 135560004188009934}
   - component: {fileID: 114526109265352076}
   - component: {fileID: 54301179297726356}
+  - component: {fileID: 114976993381080048}
   m_Layer: 0
   m_Name: Body
   m_TagString: Player
@@ -1147,6 +1148,18 @@ MonoBehaviour:
   bodyMoveSpeed: 3
   lrrotationOffset: 30
   udrotationOffset: 90
+  jumpForce: 60
+--- !u!114 &114976993381080048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1089328297428906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6dde1709d9e5e54b98d7881a339e0d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135113070435661766
 SphereCollider:
   m_ObjectHideFlags: 1

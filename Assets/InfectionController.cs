@@ -19,14 +19,11 @@ public class InfectionController : MonoBehaviour {
 
     public void Infect()
     {
-        if (infectionTimer > timer)
-        {
-            timer += Time.fixedDeltaTime;
-        }
-        else
-        {
-            timer = 0;
-            Debug.Log("infeted");
-        }
+        gameObject.GetComponentInChildren<ParticleSystem>().Play();
+    }
+
+    public void StopInfecting()
+    {
+        gameObject.GetComponentInChildren<ParticleSystem>().Stop();
     }
 }

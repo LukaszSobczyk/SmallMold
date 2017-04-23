@@ -6,6 +6,8 @@ public class InputController : MonoBehaviour {
     public float bodyMoveSpeed=1.0f;
     public float lrrotationOffset=1.0f;//y
     public float udrotationOffset = 1.0f;//x
+    public float jumpForce = 60.0f;
+    public float catchDistance = 1.0f;
 
     private Rigidbody rigi;
     private GameObject lHand;
@@ -13,8 +15,6 @@ public class InputController : MonoBehaviour {
 
 
     private float distanceFromPoint;
-    //private Vector3 lhzeropos;
-    //private Vector3 rhzeropos;
     //LineRenderer dupa;
     private float ydist;
     private float flatdist;
@@ -24,7 +24,6 @@ public class InputController : MonoBehaviour {
         rigi = this.GetComponent<Rigidbody>();
         lHand = GameObject.Find("LHand").gameObject;
         rHand = GameObject.Find("RHand").gameObject;
-        //SaveHandsPos();
         distanceFromPoint = ((lHand.transform.position + rHand.transform.position) / 2.0f - transform.position).magnitude;
         ydist = Mathf.Abs(transform.position.y - rHand.transform.position.y);
         flatdist = Mathf.Abs(new Vector3(transform.position.x - rHand.transform.position.x, 0.0f, transform.position.z - rHand.transform.position.z).magnitude);
@@ -35,13 +34,11 @@ public class InputController : MonoBehaviour {
         if (Input.GetMouseButtonDown(0))
         {
             InputResult(lHand);
-            //PositionCorrection();
             rigi.useGravity = false;
         }
         if (Input.GetMouseButtonDown(1))
         {
             InputResult(rHand);
-            //PositionCorrection();
             rigi.useGravity = false;
         }
         if ((Input.GetMouseButton(0)|| Input.GetMouseButton(1))&& !rigi.useGravity)
@@ -57,52 +54,20 @@ public class InputController : MonoBehaviour {
         {
             rigi.velocity = Vector3.zero;
         }
+        #region powrot pozycji dloni
         if (!(Input.GetMouseButton(1)) && !(Input.GetMouseButtonDown(1)))
         {
-            //todo pozycja prawej reki
-            //Transform buff = rHand.transform.parent;
-            //rHand.transform.SetParent(this.transform);
-            //Vector3 oldpos = rHand.transform.position;
-            //rHand.transform.localPosition = rhzeropos;
-            //Vector3 newpos = rHand.transform.position;
-            //rHand.transform.position = oldpos;
-            //rHand.transform.SetParent(buff);
-            //Vector3 target = (transform.forward + transform.right).normalized * flatdist - transform.up.normalized * ydist;
-            //rHand.transform.position = Vector3.MoveTowards(rHand.transform.position, transform.position+target, bodyMoveSpeed * Time.fixedDeltaTime);
             rHand.transform.position = Vector3.MoveTowards(rHand.transform.position, transform.FindChild("RHandPos").position, bodyMoveSpeed * Time.fixedDeltaTime);
         }
         if (!(Input.GetMouseButton(0)) && !(Input.GetMouseButtonDown(0)))
         {
-
-            //todo pozycja lewej reki
-            //Transform buff = lHand.transform.parent;
-            //lHand.transform.SetParent(this.transform);
-            //Vector3 oldpos = lHand.transform.position;
-            //lHand.transform.localPosition = rhzeropos;
-            //Vector3 newpos = lHand.transform.position;
-            //lHand.transform.position = oldpos;
-            //lHand.transform.SetParent(buff);
-            //Vector3 target = (transform.forward - transform.right).normalized * flatdist - transform.up.normalized*ydist;
-            //lHand.transform.position = Vector3.MoveTowards(lHand.transform.position, transform.position + target, bodyMoveSpeed * Time.fixedDeltaTime);
-            //lHand.transform.position = Vector3.MoveTowards(oldpos, newpos, bodyMoveSpeed * Time.fixedDeltaTime);
             lHand.transform.position = Vector3.MoveTowards(lHand.transform.position, transform.FindChild("LHandPos").position, bodyMoveSpeed * Time.fixedDeltaTime);
         }
-
+        #endregion
         HandRotation(lHand);
         HandRotation(rHand);
         RotationCorrection();
     }
-    //void SaveHandsPos()
-    //{
-    //    Transform buff = lHand.transform.parent;
-    //    lHand.transform.SetParent(this.transform);
-    //    lhzeropos = lHand.transform.localPosition;
-    //    lHand.transform.SetParent(buff);
-    //    buff = rHand.transform.parent;
-    //    rHand.transform.SetParent(this.transform);
-    //    rhzeropos = rHand.transform.localPosition;
-    //    rHand.transform.SetParent(buff);
-    //}
     void RotationCorrection()
     {
         Vector3 targetDir;
@@ -154,14 +119,14 @@ public class InputController : MonoBehaviour {
         {
             target = (lHand.transform.position + rHand.transform.position) / 2.0f - (lHand.transform.forward + rHand.transform.forward).normalized * distanceFromPoint;
         }
-        
         transform.position = Vector3.MoveTowards(transform.position, target, bodyMoveSpeed * Time.fixedDeltaTime);
     }
     //void OnTriggerStay(Collider coll)
     //{
-    //    if(coll.CompareTag("Enviroment")&& Input.GetButton("Jump"))
+    //    if ((coll.CompareTag("Enviroment")||coll.CompareTag("Infectable")) && Input.GetButton("Jump"))
     //    {
-    //        this.GetComponent<Rigidbody>().AddForce(0, 30, 0);
+
+    //        this.GetComponent<Rigidbody>().AddForce((transform.forward+transform.up)*jumpForce);
     //    }
     //}
     void HandRotation(GameObject hand)
@@ -174,14 +139,23 @@ public class InputController : MonoBehaviour {
     void InputResult(GameObject hand)
     {
         RaycastHit hit;
-        Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward,out hit);
-        
-        //dupa.SetPosition(0, gameObject.transform.position);
-        //dupa.SetPosition(1, hit.point);
-        if (hit.collider.CompareTag("Enviroment"))
+        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward,out hit))
         {
-            hand.transform.position = hit.point;
-            //HandRotation(hand);
+            if (hit.collider.CompareTag("Enviroment")|| hit.collider.CompareTag("Infectable"))
+            {
+                //Debug.Log("First: " + hit.collider.gameObject);
+                Ray ray = new Ray(transform.FindChild("Eye").position, hit.point - transform.FindChild("Eye").position);
+                if (Physics.Raycast(ray, out hit, catchDistance))
+                //if (Physics.Raycast(transform.FindChild("Eye").position, hit.point-transform.FindChild("Eye").position, out hit))
+                {
+                    if (hit.collider.CompareTag("Enviroment") || hit.collider.CompareTag("Infectable"))
+                    {
+                        //Debug.Log("Second: " + hit.collider.gameObject);
+                        hand.transform.position = hit.point;
+                    }
+                }
+            }
         }
+        
     }
 }

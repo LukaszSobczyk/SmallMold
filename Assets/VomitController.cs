@@ -4,36 +4,26 @@ using UnityEngine;
 
 public class VomitController : MonoBehaviour {
 
-    GameObject product;
-	// Use this for initialization
-	void Start () {
-        product = null;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
-
-    private void OnTriggerEnter(Collider other)
+    
+    private void OnTriggerStay(Collider other)
     {
+
         if (other.gameObject.tag == "Infectable")
-            product = other.gameObject;
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+                other.gameObject.GetComponent<InfectionController>().Infect();
+            if (Input.GetKeyUp(KeyCode.E))
+                other.gameObject.GetComponent<InfectionController>().StopInfecting();
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        product = null;
-    }
-    
-    private void FixedUpdate()
-    {
-        if (product != null)
+        if (other.gameObject.tag == "Infectable")
         {
-            product.gameObject.GetComponent<InfectionController>().Infect();
+            other.gameObject.GetComponent<InfectionController>().StopInfecting();
         }
     }
-    void StartVomit()
-    {
-        //TO DO Particle play
-    }
+
 }

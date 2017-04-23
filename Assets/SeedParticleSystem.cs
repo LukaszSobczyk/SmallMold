@@ -27,13 +27,13 @@ public class SeedParticleSystem : MonoBehaviour {
         int count = particleSystem.GetParticles(particles);
 
         particleTimer += Time.fixedDeltaTime;
-        if(particleTimer > 5.0f)
+        if(particleTimer > 3.0f)
         {
             int rngSeed = Guid.NewGuid().GetHashCode();
             rngNumber = new System.Random(rngSeed);
             for (int i = 0; i < count; i++)
             {
-                if(rngNumber.Next(0,100) < 20)
+                if(rngNumber.Next(0,100) < 40)
                     Instantiate(Resources.Load("Seed"), particles[i].position, Quaternion.identity);
             }
             particleTimer = 0;
