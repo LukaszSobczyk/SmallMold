@@ -8,6 +8,7 @@ public class SeedPickup : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
+            other.gameObject.GetComponent<SeedScoreSystem>().AddSeed();
             Destroy(gameObject);
         }
     }

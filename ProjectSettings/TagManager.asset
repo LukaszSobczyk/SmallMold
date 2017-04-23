@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enviroment
   - Infectable
+  - Seed
   layers:
   - Default
   - TransparentFX
