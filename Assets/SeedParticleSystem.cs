@@ -33,7 +33,7 @@ public class SeedParticleSystem : MonoBehaviour {
             rngNumber = new System.Random(rngSeed);
             for (int i = 0; i < count; i++)
             {
-                if(rngNumber.Next(0,100) < 20)
+                if(rngNumber.Next(0,100) < 10)
                     Instantiate(Resources.Load("Seed"), particles[i].position, Quaternion.identity);
             }
             particleTimer = 0;
