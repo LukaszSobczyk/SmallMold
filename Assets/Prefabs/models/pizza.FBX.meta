@@ -12,6 +12,8 @@ ModelImporter:
     100008: salami002
     100010: salami003
     100012: ser
+    100014: BlobMesh001
+    100016: salami004
     400000: ciasto
     400002: //RootNode
     400004: salami
@@ -19,24 +21,32 @@ ModelImporter:
     400008: salami002
     400010: salami003
     400012: ser
+    400014: BlobMesh001
+    400016: salami004
     2300000: ciasto
     2300002: salami
     2300004: salami001
     2300006: salami002
     2300008: salami003
     2300010: ser
+    2300012: BlobMesh001
+    2300014: salami004
     3300000: ciasto
     3300002: salami
     3300004: salami001
     3300006: salami002
     3300008: salami003
     3300010: ser
+    3300012: BlobMesh001
+    3300014: salami004
     4300000: ciasto
     4300002: ser
     4300004: salami
     4300006: salami001
     4300008: salami002
     4300010: salami003
+    4300012: BlobMesh001
+    4300014: salami004
   materials:
     importMaterials: 1
     materialName: 0

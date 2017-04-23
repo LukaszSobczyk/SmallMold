@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Materials/textures/sausage/plate_sausage_v1_DefaultMaterial_AlbedoTransparency.png.meta
+guid: 3133b81a7c719ba4d8c9c05a82dcc53d
+timeCreated: 1492998873
+=======
 guid: d57e563ee34b8004caaba53b82aaabf9
 timeCreated: 1492965001
+>>>>>>> f4820f58f6c2d7a87678b4239b0c2ae47ae1e061:Assets/Materials/textures/sausage/plate_sausage_v1_DefaultMaterial_AlbedoTransparency.png.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
