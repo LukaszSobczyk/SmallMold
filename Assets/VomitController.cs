@@ -17,23 +17,19 @@ public class VomitController : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Infectable")
-            product = other.gameObject;
+        {
+            other.gameObject.GetComponent<InfectionController>().Infect();
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        product = null;
-    }
-    
-    private void FixedUpdate()
-    {
-        if (product != null)
+        if (other.gameObject.tag == "Infectable")
         {
-            product.gameObject.GetComponent<InfectionController>().Infect();
+            other.gameObject.GetComponent<InfectionController>().StopInfecting();
         }
+
     }
-    void StartVomit()
-    {
-        //TO DO Particle play
-    }
+
 }

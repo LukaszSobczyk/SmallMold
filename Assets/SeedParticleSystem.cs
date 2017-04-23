@@ -27,7 +27,7 @@ public class SeedParticleSystem : MonoBehaviour {
         int count = particleSystem.GetParticles(particles);
 
         particleTimer += Time.fixedDeltaTime;
-        if(particleTimer > 5.0f)
+        if(particleTimer > 3.0f)
         {
             int rngSeed = Guid.NewGuid().GetHashCode();
             rngNumber = new System.Random(rngSeed);
