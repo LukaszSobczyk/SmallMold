@@ -41,6 +41,7 @@ public class InputController : MonoBehaviour {
         else if(!(Input.GetMouseButton(0)) && !(Input.GetMouseButtonDown(0)))
         {
             lHand.transform.position = this.transform.position+lhzeropos;
+            //lHand.transform.localRotation = lhzerotation;
         }
         if (Input.GetMouseButtonDown(1))
         {
@@ -65,6 +66,8 @@ public class InputController : MonoBehaviour {
         {
             rigi.velocity = Vector3.zero;
         }
+        HandRotation(lHand);
+        HandRotation(rHand);
     }
     void RotationCorrection()
     {
@@ -106,7 +109,7 @@ public class InputController : MonoBehaviour {
         if (hit.collider.CompareTag("Enviroment"))
         {
             hand.transform.position = hit.point;
-            HandRotation(hand);
+            //HandRotation(hand);
         }
     }
 }
