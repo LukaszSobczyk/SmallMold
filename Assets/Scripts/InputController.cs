@@ -5,8 +5,8 @@ using UnityEngine;
 public class InputController : MonoBehaviour {
     public float bodyMoveSpeed=1.0f;
     public float lrrotationOffset=1.0f;//y
-    public float udrotationOffset = 1.0f;//x
-    public float jumpForce = 60.0f;
+    //public float udrotationOffset = 1.0f;//x
+    //public float jumpForce = 60.0f;
     public float catchDistance = 1.0f;
 
     private Rigidbody rigi;
@@ -35,11 +35,13 @@ public class InputController : MonoBehaviour {
         {
             InputResult(lHand);
             rigi.useGravity = false;
+            CatchAnim();
         }
         if (Input.GetMouseButtonDown(1))
         {
             InputResult(rHand);
             rigi.useGravity = false;
+            CatchAnim();
         }
         if ((Input.GetMouseButton(0)|| Input.GetMouseButton(1))&& !rigi.useGravity)
         {
@@ -49,6 +51,7 @@ public class InputController : MonoBehaviour {
         else if (!(Input.GetMouseButton(0)) && !(Input.GetMouseButton(1)))
         {
             rigi.useGravity = true;
+            IdleAnim();
         }
         if ((Input.GetMouseButtonUp(0)) && !(Input.GetMouseButton(1)) || (Input.GetMouseButtonUp(1)) && !(Input.GetMouseButton(0)))
         {
@@ -76,7 +79,6 @@ public class InputController : MonoBehaviour {
             //lewa
             targetDir = lHand.transform.position;
             transform.LookAt(targetDir);
-            //transform.Rotate(new Vector3(-udrotationOffset, 0.0f, 0.0f));
             transform.Rotate(new Vector3(0.0f, lrrotationOffset, 0.0f));
         }
         else if (!(Input.GetMouseButton(0)) && (Input.GetMouseButton(1)))
@@ -84,7 +86,6 @@ public class InputController : MonoBehaviour {
             //prawa
             targetDir = rHand.transform.position;
             transform.LookAt(targetDir);
-            //transform.Rotate(new Vector3(-udrotationOffset, 0.0f, 0.0f));
             transform.Rotate(new Vector3(0.0f, -lrrotationOffset,0.0f));
         }
         else
@@ -96,10 +97,6 @@ public class InputController : MonoBehaviour {
                 targetDir.y = this.transform.position.y;
             }
             transform.LookAt(targetDir);
-            //if(!rigi.useGravity)
-            //{
-                //transform.Rotate(new Vector3(-udrotationOffset, 0.0f, 0.0f));
-            //}
         }
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
 
@@ -121,14 +118,6 @@ public class InputController : MonoBehaviour {
         }
         transform.position = Vector3.MoveTowards(transform.position, target, bodyMoveSpeed * Time.fixedDeltaTime);
     }
-    //void OnTriggerStay(Collider coll)
-    //{
-    //    if ((coll.CompareTag("Enviroment")||coll.CompareTag("Infectable")) && Input.GetButton("Jump"))
-    //    {
-
-    //        this.GetComponent<Rigidbody>().AddForce((transform.forward+transform.up)*jumpForce);
-    //    }
-    //}
     void HandRotation(GameObject hand)
     {
         Vector3 targetDir = (hand.transform.position - gameObject.transform.position).normalized+ hand.transform.position;
@@ -157,5 +146,13 @@ public class InputController : MonoBehaviour {
             }
         }
         
+    }
+    void CatchAnim()
+    {
+        transform.FindChild("mold_hero").GetComponent<Animator>().SetBool("Holding", true);
+    }
+    void IdleAnim()
+    {
+        transform.FindChild("mold_hero").GetComponent<Animator>().SetBool("Holding", false);
     }
 }
