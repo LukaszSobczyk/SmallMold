@@ -142,12 +142,12 @@ public class InputController : MonoBehaviour {
         {
             if (hit.collider.CompareTag("Enviroment")|| hit.collider.CompareTag("Infectable"))
             {
-                Debug.Log("First: " + hit.collider.gameObject);
+                //Debug.Log("First: " + hit.collider.gameObject);
                 if (Physics.Raycast(transform.FindChild("Eye").position, hit.point-transform.FindChild("Eye").position, out hit))
                 {
                     if (hit.collider.CompareTag("Enviroment") || hit.collider.CompareTag("Infectable"))
                     {
-                        Debug.Log("Second: " + hit.collider.gameObject);
+                        //Debug.Log("Second: " + hit.collider.gameObject);
                         hand.transform.position = hit.point;
                     }
                 }
