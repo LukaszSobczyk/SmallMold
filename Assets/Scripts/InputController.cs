@@ -67,8 +67,9 @@ public class InputController : MonoBehaviour {
             //Vector3 newpos = rHand.transform.position;
             //rHand.transform.position = oldpos;
             //rHand.transform.SetParent(buff);
-            Vector3 target = (transform.forward + transform.right).normalized * flatdist - transform.up.normalized * ydist;
-            rHand.transform.position = Vector3.MoveTowards(rHand.transform.position, transform.position+target, bodyMoveSpeed * Time.fixedDeltaTime);
+            //Vector3 target = (transform.forward + transform.right).normalized * flatdist - transform.up.normalized * ydist;
+            //rHand.transform.position = Vector3.MoveTowards(rHand.transform.position, transform.position+target, bodyMoveSpeed * Time.fixedDeltaTime);
+            rHand.transform.position = Vector3.MoveTowards(rHand.transform.position, transform.FindChild("RHandPos").position, bodyMoveSpeed * Time.fixedDeltaTime);
         }
         if (!(Input.GetMouseButton(0)) && !(Input.GetMouseButtonDown(0)))
         {
@@ -81,9 +82,10 @@ public class InputController : MonoBehaviour {
             //Vector3 newpos = lHand.transform.position;
             //lHand.transform.position = oldpos;
             //lHand.transform.SetParent(buff);
-            Vector3 target = (transform.forward - transform.right).normalized * flatdist - transform.up.normalized*ydist;
-            lHand.transform.position = Vector3.MoveTowards(lHand.transform.position, transform.position + target, bodyMoveSpeed * Time.fixedDeltaTime);
+            //Vector3 target = (transform.forward - transform.right).normalized * flatdist - transform.up.normalized*ydist;
+            //lHand.transform.position = Vector3.MoveTowards(lHand.transform.position, transform.position + target, bodyMoveSpeed * Time.fixedDeltaTime);
             //lHand.transform.position = Vector3.MoveTowards(oldpos, newpos, bodyMoveSpeed * Time.fixedDeltaTime);
+            lHand.transform.position = Vector3.MoveTowards(lHand.transform.position, transform.FindChild("LHandPos").position, bodyMoveSpeed * Time.fixedDeltaTime);
         }
 
         HandRotation(lHand);
