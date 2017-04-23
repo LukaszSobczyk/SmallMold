@@ -13,17 +13,21 @@ public class InputController : MonoBehaviour {
 
 
     private float distanceFromPoint;
-    private Vector3 lhzeropos;
-    private Vector3 rhzeropos;
+    //private Vector3 lhzeropos;
+    //private Vector3 rhzeropos;
     //LineRenderer dupa;
+    private float ydist;
+    private float flatdist;
     void Start ()
     {
         //dupa = gameObject.AddComponent<LineRenderer>();
         rigi = this.GetComponent<Rigidbody>();
         lHand = GameObject.Find("LHand").gameObject;
         rHand = GameObject.Find("RHand").gameObject;
-        SaveHandsPos();
+        //SaveHandsPos();
         distanceFromPoint = ((lHand.transform.position + rHand.transform.position) / 2.0f - transform.position).magnitude;
+        ydist = Mathf.Abs(transform.position.y - rHand.transform.position.y);
+        flatdist = Mathf.Abs(new Vector3(transform.position.x - rHand.transform.position.x, 0.0f, transform.position.z - rHand.transform.position.z).magnitude);
     }
     
     void Update ()
@@ -55,40 +59,48 @@ public class InputController : MonoBehaviour {
         }
         if (!(Input.GetMouseButton(1)) && !(Input.GetMouseButtonDown(1)))
         {
-            //rHand.transform.position = this.transform.position+rhzeropos;
-            //rHand.transform.localRotation = rhzerotation;
             //todo pozycja prawej reki
-            Transform buff = rHand.transform.parent;
-            rHand.transform.SetParent(this.transform);
-            rHand.transform.localPosition = rhzeropos;
-            rHand.transform.SetParent(buff);
+            //Transform buff = rHand.transform.parent;
+            //rHand.transform.SetParent(this.transform);
+            //Vector3 oldpos = rHand.transform.position;
+            //rHand.transform.localPosition = rhzeropos;
+            //Vector3 newpos = rHand.transform.position;
+            //rHand.transform.position = oldpos;
+            //rHand.transform.SetParent(buff);
+            Vector3 target = (transform.forward + transform.right).normalized * flatdist - transform.up.normalized * ydist;
+            rHand.transform.position = Vector3.MoveTowards(rHand.transform.position, transform.position+target, bodyMoveSpeed * Time.fixedDeltaTime);
         }
         if (!(Input.GetMouseButton(0)) && !(Input.GetMouseButtonDown(0)))
         {
-            //lHand.transform.position = this.transform.position+lhzeropos;
-            //lHand.transform.localRotation = lhzerotation;
+
             //todo pozycja lewej reki
-            Transform buff = lHand.transform.parent;
-            lHand.transform.SetParent(this.transform);
-            lHand.transform.localPosition = lhzeropos;
-            lHand.transform.SetParent(buff);
+            //Transform buff = lHand.transform.parent;
+            //lHand.transform.SetParent(this.transform);
+            //Vector3 oldpos = lHand.transform.position;
+            //lHand.transform.localPosition = rhzeropos;
+            //Vector3 newpos = lHand.transform.position;
+            //lHand.transform.position = oldpos;
+            //lHand.transform.SetParent(buff);
+            Vector3 target = (transform.forward - transform.right).normalized * flatdist - transform.up.normalized*ydist;
+            lHand.transform.position = Vector3.MoveTowards(lHand.transform.position, transform.position + target, bodyMoveSpeed * Time.fixedDeltaTime);
+            //lHand.transform.position = Vector3.MoveTowards(oldpos, newpos, bodyMoveSpeed * Time.fixedDeltaTime);
         }
 
         HandRotation(lHand);
         HandRotation(rHand);
         RotationCorrection();
     }
-    void SaveHandsPos()
-    {
-        Transform buff = lHand.transform.parent;
-        lHand.transform.SetParent(this.transform);
-        lhzeropos = lHand.transform.localPosition;
-        lHand.transform.SetParent(buff);
-        buff = rHand.transform.parent;
-        rHand.transform.SetParent(this.transform);
-        rhzeropos = rHand.transform.localPosition;
-        rHand.transform.SetParent(buff);
-    }
+    //void SaveHandsPos()
+    //{
+    //    Transform buff = lHand.transform.parent;
+    //    lHand.transform.SetParent(this.transform);
+    //    lhzeropos = lHand.transform.localPosition;
+    //    lHand.transform.SetParent(buff);
+    //    buff = rHand.transform.parent;
+    //    rHand.transform.SetParent(this.transform);
+    //    rhzeropos = rHand.transform.localPosition;
+    //    rHand.transform.SetParent(buff);
+    //}
     void RotationCorrection()
     {
         Vector3 targetDir;
@@ -97,6 +109,7 @@ public class InputController : MonoBehaviour {
             //lewa
             targetDir = lHand.transform.position;
             transform.LookAt(targetDir);
+            //transform.Rotate(new Vector3(-udrotationOffset, 0.0f, 0.0f));
             transform.Rotate(new Vector3(0.0f, lrrotationOffset, 0.0f));
         }
         else if (!(Input.GetMouseButton(0)) && (Input.GetMouseButton(1)))
@@ -104,6 +117,7 @@ public class InputController : MonoBehaviour {
             //prawa
             targetDir = rHand.transform.position;
             transform.LookAt(targetDir);
+            //transform.Rotate(new Vector3(-udrotationOffset, 0.0f, 0.0f));
             transform.Rotate(new Vector3(0.0f, -lrrotationOffset,0.0f));
         }
         else
@@ -115,6 +129,10 @@ public class InputController : MonoBehaviour {
                 targetDir.y = this.transform.position.y;
             }
             transform.LookAt(targetDir);
+            //if(!rigi.useGravity)
+            //{
+                //transform.Rotate(new Vector3(-udrotationOffset, 0.0f, 0.0f));
+            //}
         }
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, 0);
 
