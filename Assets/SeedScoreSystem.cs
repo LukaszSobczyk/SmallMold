@@ -22,6 +22,7 @@ public class SeedScoreSystem : MonoBehaviour {
     void Start()
     {
         ActualizeScoreText();
+        ActualizeMainBar();
     }
     void ActualizeScoreText()
     {
@@ -32,9 +33,28 @@ public class SeedScoreSystem : MonoBehaviour {
     {
         if (mainPrgressBar != null)
         {
-            //float percentage;
-            //percentage
-            //mainPrgressBar.GetComponent<Image>().fillAmount = percentage;
+            float max = playerLevelScore[playerLevelScore.Length - 1];
+            float min = 0.0f;
+            if(collectedSeeds >max)
+            {
+                mainPrgressBar.GetComponent<Image>().fillAmount = 1.0f;
+            }
+            for (int i = playerLevelScore.Length-1; i > -1; i--)
+            {
+                max = playerLevelScore[i];
+                if(i!=0)
+                {
+                    min = playerLevelScore[i - 1];
+                }
+                {
+                    min = 0.0f;
+                }
+                if (min <= collectedSeeds && collectedSeeds < max)
+                {
+                    mainPrgressBar.GetComponent<Image>().fillAmount = (collectedSeeds - min) / (max - min);
+                    break;
+                }
+            }
         }
     }
     private void SetLevel()
