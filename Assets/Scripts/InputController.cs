@@ -14,12 +14,12 @@ public class InputController : MonoBehaviour {
 
 
     private float distanceFromPoint;
-    LineRenderer dupa;
+    //LineRenderer dupa;
     private float ydist;
     private float flatdist;
     void Start ()
     {
-        dupa = gameObject.AddComponent<LineRenderer>();
+        //dupa = gameObject.AddComponent<LineRenderer>();
         rigi = this.GetComponent<Rigidbody>();
         lHand = GameObject.Find("LHand").gameObject;
         rHand = GameObject.Find("RHand").gameObject;
@@ -143,9 +143,9 @@ public class InputController : MonoBehaviour {
             if (hit.collider.CompareTag("Enviroment")|| hit.collider.CompareTag("Infectable"))
             {
                 Debug.Log("First: " + hit.collider.gameObject);
-                //if (Physics.Raycast(transform.FindChild("Eye").position, hit.point-transform.FindChild("Eye").position, out hit))
+                if (Physics.Raycast(transform.FindChild("Eye").position, hit.point-transform.FindChild("Eye").position, out hit))
                 {
-                    //if (hit.collider.CompareTag("Enviroment") || hit.collider.CompareTag("Infectable"))
+                    if (hit.collider.CompareTag("Enviroment") || hit.collider.CompareTag("Infectable"))
                     {
                         Debug.Log("Second: " + hit.collider.gameObject);
                         hand.transform.position = hit.point;
