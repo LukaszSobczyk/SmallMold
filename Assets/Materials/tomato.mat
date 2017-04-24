@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: tomato
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 6e8892ea14182d545bbd957b09321cbf, type: 3}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
@@ -58,6 +58,36 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
+        name: _MetallicMap
+      second:
+        m_Texture: {fileID: 2800000, guid: 95baff0ca92c7464d9d6147e8cfceacc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MoldMask
+      second:
+        m_Texture: {fileID: 2800000, guid: 1cf114a5c5d824f4a9ad4d86ce1dd272, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _MoldTex
+      second:
+        m_Texture: {fileID: 2800000, guid: 7b363bc6e8df36143b5f881c2c7afb35, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Normal
+      second:
+        m_Texture: {fileID: 2800000, guid: a5271fa168f1ba84f8386644b69ff804, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _Occlusion
+      second:
+        m_Texture: {fileID: 2800000, guid: 5bd3896f86a571a49a9d79f50d1ff69e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
         name: _OcclusionMap
       second:
         m_Texture: {fileID: 2800000, guid: 5bd3896f86a571a49a9d79f50d1ff69e, type: 3}
@@ -67,6 +97,12 @@ Material:
         name: _ParallaxMap
       second:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _PositionMap
+      second:
+        m_Texture: {fileID: 2800000, guid: 2083f39e305a3bd4d94e79ad3ba1ab92, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -92,11 +128,20 @@ Material:
         name: _GlossyReflections
       second: 1
     - first:
+        name: _HeightTreshhold
+      second: 0
+    - first:
         name: _Metallic
       second: 0
     - first:
         name: _Mode
       second: 0
+    - first:
+        name: _MoldHeight
+      second: 2
+    - first:
+        name: _MoldLevel
+      second: 0.99
     - first:
         name: _OcclusionStrength
       second: 1
@@ -113,6 +158,9 @@ Material:
         name: _SrcBlend
       second: 1
     - first:
+        name: _Treshhold
+      second: 0
+    - first:
         name: _UVSec
       second: 0
     - first:
@@ -125,3 +173,6 @@ Material:
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
+    - first:
+        name: _MoldColor
+      second: {r: 1, g: 1, b: 1, a: 1}
