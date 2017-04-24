@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputController : MonoBehaviour {
-    public float bodyMoveSpeed=1.0f;
-    public float lrrotationOffset=1.0f;//y
+public class InputController : MonoBehaviour
+{
+    public float bodyMoveSpeed = 1.0f;
+    public float lrrotationOffset = 1.0f;//y
     //public float udrotationOffset = 1.0f;//x
     //public float jumpForce = 60.0f;
     public float catchDistance = 1.0f;
@@ -18,7 +19,7 @@ public class InputController : MonoBehaviour {
     //LineRenderer dupa;
     private float ydist;
     private float flatdist;
-    void Start ()
+    void Start()
     {
         //dupa = gameObject.AddComponent<LineRenderer>();
         rigi = this.GetComponent<Rigidbody>();
@@ -28,8 +29,8 @@ public class InputController : MonoBehaviour {
         ydist = Mathf.Abs(transform.position.y - rHand.transform.position.y);
         flatdist = Mathf.Abs(new Vector3(transform.position.x - rHand.transform.position.x, 0.0f, transform.position.z - rHand.transform.position.z).magnitude);
     }
-    
-    void Update ()
+
+    void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -43,7 +44,7 @@ public class InputController : MonoBehaviour {
             rigi.useGravity = false;
             CatchAnim();
         }
-        if ((Input.GetMouseButton(0)|| Input.GetMouseButton(1))&& !rigi.useGravity)
+        if ((Input.GetMouseButton(0) || Input.GetMouseButton(1)) && !rigi.useGravity)
         {
             PositionCorrection();
         }
@@ -86,7 +87,7 @@ public class InputController : MonoBehaviour {
             //prawa
             targetDir = rHand.transform.position;
             transform.LookAt(targetDir);
-            transform.Rotate(new Vector3(0.0f, -lrrotationOffset,0.0f));
+            transform.Rotate(new Vector3(0.0f, -lrrotationOffset, 0.0f));
         }
         else
         {
@@ -110,7 +111,7 @@ public class InputController : MonoBehaviour {
         }
         else if (!(Input.GetMouseButton(0)) && (Input.GetMouseButton(1)))
         {
-            target = rHand.transform.position+(this.transform.position - rHand.transform.position).normalized*distanceFromPoint;
+            target = rHand.transform.position + (this.transform.position - rHand.transform.position).normalized * distanceFromPoint;
         }
         else
         {
@@ -120,7 +121,7 @@ public class InputController : MonoBehaviour {
     }
     void HandRotation(GameObject hand)
     {
-        Vector3 targetDir = (hand.transform.position - gameObject.transform.position).normalized+ hand.transform.position;
+        Vector3 targetDir = (hand.transform.position - gameObject.transform.position).normalized + hand.transform.position;
         hand.transform.LookAt(targetDir);
         hand.transform.rotation = Quaternion.Euler(hand.transform.rotation.eulerAngles.x, hand.transform.rotation.eulerAngles.y, 0);
     }
@@ -128,16 +129,17 @@ public class InputController : MonoBehaviour {
     void InputResult(GameObject hand)
     {
         RaycastHit hit;
-        if(Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward,out hit))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
         {
-            if (hit.collider.CompareTag("Enviroment")|| hit.collider.CompareTag("Infectable"))
+            if (hit.collider.CompareTag("Enviroment") || hit.collider.CompareTag("Infectable"))
             {
                 //Debug.Log("First: " + hit.collider.gameObject);
                 Ray ray = new Ray(transform.FindChild("Eye").position, hit.point - transform.FindChild("Eye").position);
+                Vector3 firsthit = hit.point;
                 if (Physics.Raycast(ray, out hit, catchDistance))
                 //if (Physics.Raycast(transform.FindChild("Eye").position, hit.point-transform.FindChild("Eye").position, out hit))
                 {
-                    if (hit.collider.CompareTag("Enviroment") || hit.collider.CompareTag("Infectable"))
+                    if ((hit.collider.CompareTag("Enviroment") || hit.collider.CompareTag("Infectable")) && ((firsthit - hit.point).magnitude < catchDistance))
                     {
                         //Debug.Log("Second: " + hit.collider.gameObject);
                         hand.transform.position = hit.point;
@@ -145,7 +147,7 @@ public class InputController : MonoBehaviour {
                 }
             }
         }
-        
+
     }
     void CatchAnim()
     {
