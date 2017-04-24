@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SeedScoreSystem : MonoBehaviour {
 
-    int collectedSeeds = 100;
+    public int collectedSeeds = 100;
     int playerLevel = 1;
     public int[] playerLevelScore;
     public int seedLose = 3;
+    public GameObject scoreText;
+
     public void AddSeed()
     {
         collectedSeeds++;
@@ -16,10 +19,15 @@ public class SeedScoreSystem : MonoBehaviour {
         Debug.Log(playerLevel);
     }
 
-    private void Update()
+    void Start()
     {
+        ActualizeScoreText();
     }
-
+    void ActualizeScoreText()
+    {
+        if(scoreText!=null)
+            scoreText.GetComponent<Text>().text = collectedSeeds.ToString();
+    }
     private void SetLevel()
     {
         if (playerLevelScore[0] - 1 < collectedSeeds && playerLevelScore[1] >= collectedSeeds)
