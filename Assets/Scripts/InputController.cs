@@ -139,7 +139,8 @@ public class InputController : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, catchDistance))
                 //if (Physics.Raycast(transform.FindChild("Eye").position, hit.point-transform.FindChild("Eye").position, out hit))
                 {
-                    if ((hit.collider.CompareTag("Enviroment") || hit.collider.CompareTag("Infectable")) && ((firsthit - hit.point).magnitude < catchDistance))
+                    if ((hit.collider.CompareTag("Enviroment") || hit.collider.CompareTag("Infectable")) && ((firsthit - hit.point).magnitude < catchDistance)
+                        &&(this.transform.position-Camera.main.transform.position).magnitude < (hit.point - Camera.main.transform.position).magnitude)
                     {
                         //Debug.Log("Second: " + hit.collider.gameObject);
                         hand.transform.position = hit.point;
