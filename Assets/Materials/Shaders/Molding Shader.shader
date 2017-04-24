@@ -3,6 +3,7 @@
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
 		_Normal ("Normal", 2D) = "bump" {}
+		_Occlusion ("Occlusion", 2D) = "white" {}
 		_MoldMask ("Mold Mask", 2D) = "white" {}
 		_MoldLevel("Mold Level", Range(0,0.99)) = 0.0
 		_MoldHeight("Mold height", Range(0,2)) = 0.0
@@ -32,6 +33,7 @@
 		sampler2D _PositionMap;
 		sampler2D _MetallicMap;
 		sampler2D _Normal;
+		sampler2D _Occlusion;
 
 		struct Input {
 			float2 uv_MainTex;
@@ -40,6 +42,7 @@
 			float2 uv_PositionMap;
 			float2 uv_MetallicMap;
 			float2 uv_Normal;
+			float2 uv_Occlusion;
 		};
 
 		half _Treshhold;
@@ -55,6 +58,7 @@
 			// Albedo comes from a texture tinted by color
 
 			fixed4 position = tex2D(_PositionMap, IN.uv_PositionMap);
+			fixed4 occlusion = tex2D(_Occlusion, IN.uv_Occlusion);
 			fixed4 moldTex = tex2D(_MoldTex, IN.uv_MoldTex) * _MoldColor;
 			fixed4 m = tex2D(_MoldMask, IN.uv_MoldMask);
 			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
@@ -77,26 +81,13 @@
 
 			o.Albedo = c.rgb;
 			// Metallic and smoothness come from slider variables
-			o.Metallic = _Metallic * metallic.r;
+			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
-			o.Alpha = c.a;
+			o.Alpha = occlusion.a;
+			o.Occlusion = occlusion.r;
 			o.Normal = UnpackNormal( tex2D (_Normal, IN.uv_Normal));
-
-			/*half4 c = tex2D(_MainTex, IN.uv_MainTex);
-			o.Normal = UnpackNormal(tex2D(_Normal, IN.uv_Normal));
-			if (dot(WorldNormalVector(IN, o.Normal),
-				_MoldDirection.xyz) >= _MoldLevel)
-				o.Albedo = _MoldColor.rgb;
-			else
-				o.Albedo = c.rgb * _Color;
-			o.Alpha = 1;*/
 		}
 
-		//void vert(inout appdata_full v) {
-		//	float4 sn = mul(UNITY_MATRIX_IT_MV, _MoldDirection);
-		//	if (dot(v.normal, sn.xyz) >= _MoldLevel)
-		//		v.vertex.xyz += (sn.xyz + v.normal) * _MoldDepth * _MoldLevel;
-		//}
 		ENDCG
 	}
 	FallBack "Diffuse"
