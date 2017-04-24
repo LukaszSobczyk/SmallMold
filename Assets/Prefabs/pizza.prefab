@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 23462608509570260}
   m_Layer: 0
   m_Name: talerz (1)
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,6 +106,8 @@ GameObject:
   - component: {fileID: 4228894709977224}
   - component: {fileID: 33858198014665036}
   - component: {fileID: 23037430716024456}
+  - component: {fileID: 64039661171977854}
+  - component: {fileID: 114592222991522838}
   m_Layer: 0
   m_Name: ciasto
   m_TagString: Untagged
@@ -180,7 +182,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1776456153483252}
   m_LocalRotation: {x: -0, y: -0.36977816, z: -0, w: 0.9291201}
-  m_LocalPosition: {x: -0.372, y: 2.805, z: 0.66}
+  m_LocalPosition: {x: 0.474, y: 1.391, z: 0.773}
   m_LocalScale: {x: 0.005, y: 0.005, z: 0.005}
   m_Children:
   - {fileID: 4830336326711876}
@@ -422,7 +424,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b0a467cc76700654db3c496e0214664b, type: 2}
+  - {fileID: 2100000, guid: f3b5b90b44e7786409e7fa76239bc7d5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -551,3 +553,28 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1219111484720338}
   m_Mesh: {fileID: 4300006, guid: 0ecdab6cda3c77848b927ec8e0731362, type: 3}
+--- !u!64 &64039661171977854
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1472748497979666}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 0ecdab6cda3c77848b927ec8e0731362, type: 3}
+--- !u!114 &114592222991522838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1472748497979666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a1639b4dac0ab4982b8e6b3e7f5fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
