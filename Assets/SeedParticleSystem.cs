@@ -11,7 +11,7 @@ public class SeedParticleSystem : MonoBehaviour {
     System.Random rngNumber;
 
     int seedSpawn = 0;
-    public int maxSeedSpawn = 100;
+    public int maxSeedSpawn = 70;
     public int SpawnRate = 20;
     //GameObject ob;
     // Use this for initialization

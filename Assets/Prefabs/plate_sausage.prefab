@@ -200,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1967204922184954}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.36158, y: 2.028, z: 0.90947}
+  m_LocalPosition: {x: 0.649, y: 2.028, z: 0.389}
   m_LocalScale: {x: 0.37214473, y: 0.37214467, z: 0.37214467}
   m_Children:
   - {fileID: 4866550219874014}
@@ -620,8 +620,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bee072cf0fa904a9cc9b4f744a8d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSeedSpawn: 200
-  SpawnRate: 30
+  maxSeedSpawn: 70
+  SpawnRate: 20
 --- !u!114 &114172438014877854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a1639b4dac0ab4982b8e6b3e7f5fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToInfect: 1
+  LevelToInfect: 2
   ps: {fileID: 198581657235819956}
 --- !u!114 &114300948657197726
 MonoBehaviour:
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a1639b4dac0ab4982b8e6b3e7f5fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToInfect: 3
+  LevelToInfect: 1
   ps: {fileID: 198905578785139692}
 --- !u!114 &114369515494569758
 MonoBehaviour:
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bee072cf0fa904a9cc9b4f744a8d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSeedSpawn: 100
+  maxSeedSpawn: 70
   SpawnRate: 20
 --- !u!114 &114731509380599324
 MonoBehaviour:
@@ -685,7 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a1639b4dac0ab4982b8e6b3e7f5fc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelToInfect: 1
+  LevelToInfect: 2
   ps: {fileID: 198074956795020990}
 --- !u!114 &114769539694837002
 MonoBehaviour:
@@ -711,8 +711,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40bee072cf0fa904a9cc9b4f744a8d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSeedSpawn: 200
-  SpawnRate: 30
+  maxSeedSpawn: 70
+  SpawnRate: 20
 --- !u!198 &198074956795020990
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -768,7 +768,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1601927834
+  randomSeed: -1611470749
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5958,7 +5958,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -566968179
+  randomSeed: 681654854
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -8553,7 +8553,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 66680672
+  randomSeed: 1227219749
   InitialModule:
     serializedVersion: 3
     enabled: 1
