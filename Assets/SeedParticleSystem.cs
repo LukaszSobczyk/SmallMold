@@ -9,6 +9,7 @@ public class SeedParticleSystem : MonoBehaviour {
     ParticleSystem particleSystem;
     ParticleSystem.Particle[] particles;
     System.Random rngNumber;
+    //GameObject ob;
     // Use this for initialization
     void Start () {
         particleSystem = gameObject.GetComponent<ParticleSystem>();
@@ -33,8 +34,16 @@ public class SeedParticleSystem : MonoBehaviour {
             rngNumber = new System.Random(rngSeed);
             for (int i = 0; i < count; i++)
             {
+                GameObject ob;
                 if(rngNumber.Next(0,100) < 40)
-                    Instantiate(Resources.Load("Seed"), particles[i].position, Quaternion.identity);
+                {
+                    ob = GameObject.Instantiate(Resources.Load("zarodek") as GameObject, particles[i].position, Quaternion.identity);
+                    ob.GetComponent<Rigidbody>().velocity = particles[i].velocity;
+                    Debug.Log(particles[i].velocity + " ob:" + ob.GetComponent<Rigidbody>().velocity);
+                }
+
+
+                
             }
             particleTimer = 0;
         }

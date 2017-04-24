@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class InfectionController : MonoBehaviour {
 
+    enum InfectionState
+    {
+        None,
+        Infecting
+    }
+    InfectionState state;
     float infectionLevel;
     float infectionTimer = 2.0f;
     float timer = 0;
     // Use this for initialization
     void Start () {
         infectionLevel = 0;
+        state = InfectionState.None;
 	}
 	
 	// Update is called once per frame
@@ -20,8 +27,12 @@ public class InfectionController : MonoBehaviour {
     public void Infect()
     {
         //Debug.Log(infectionLevel);
-        if (GetComponentInChildren<ParticleSystem>() != null)
+        if (GetComponentInChildren<ParticleSystem>() != null && state == InfectionState.None)
+        {
             gameObject.GetComponentInChildren<ParticleSystem>().Play();
+            state = InfectionState.Infecting;
+        }
+
         infectionLevel+= .01f;
         MoldingScript.ChangeMold(GetComponent<Renderer>(), infectionLevel, infectionLevel);
     }
@@ -30,5 +41,6 @@ public class InfectionController : MonoBehaviour {
     {
         if(GetComponentInChildren<ParticleSystem>() != null)
             gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+        state = InfectionState.None;
     }
 }
