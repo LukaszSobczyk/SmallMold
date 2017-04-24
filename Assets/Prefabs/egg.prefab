@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 33449284137992926}
   - component: {fileID: 23532023617477252}
   - component: {fileID: 95545540362434324}
+  - component: {fileID: 64192455798118110}
   m_Layer: 0
   m_Name: egg
-  m_TagString: Untagged
+  m_TagString: Infectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +80,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1560307175828136}
+  m_Mesh: {fileID: 4300000, guid: 671781060556a8e448fddfc30e1f6743, type: 3}
+--- !u!64 &64192455798118110
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1560307175828136}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 671781060556a8e448fddfc30e1f6743, type: 3}
 --- !u!95 &95545540362434324
 Animator:

@@ -141,7 +141,7 @@ Material:
       second: 0
     - first:
         name: _MoldLevel
-      second: 0
+      second: 0.99
     - first:
         name: _OcclusionStrength
       second: 1
