@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MarkerUpdater : MonoBehaviour {
 
@@ -48,5 +49,10 @@ public class MarkerUpdater : MonoBehaviour {
 
                            ((viewportPosition.y * canvasRect.sizeDelta.y) - (canvasRect.sizeDelta.y * 0.5f)
                            - marker.GetComponent<RectTransform>().rect.height * 0.6f * Mathf.Sign(viewportPosition.y - 0.5f)));
+        InfectionController infoSource=currentTarget.GetComponent<InfectionController>();
+        if(infoSource!=null)
+        {
+            marker.GetComponentInChildren<Text>().text = infoSource.LevelToInfect.ToString();
+        }
     }
 }

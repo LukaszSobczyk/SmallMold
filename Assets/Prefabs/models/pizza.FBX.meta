@@ -31,6 +31,7 @@ ModelImporter:
     2300010: ser
     2300012: BlobMesh001
     2300014: salami004
+    2300016: //RootNode
     3300000: ciasto
     3300002: salami
     3300004: salami001
@@ -39,6 +40,7 @@ ModelImporter:
     3300010: ser
     3300012: BlobMesh001
     3300014: salami004
+    3300016: //RootNode
     4300000: ciasto
     4300002: ser
     4300004: salami
