@@ -11,15 +11,22 @@ public class MarkerUpdater : MonoBehaviour {
     {
         if (other.CompareTag("Infectable") && marker != null)
         {
-            if(other.gameObject.transform.parent.name=="pizza")
+            if(other.gameObject.transform.parent!=null)
             {
-                currentTarget = other.gameObject.transform.parent.gameObject;
+                if (other.gameObject.transform.parent.name == "pizza")
+                {
+                    currentTarget = other.gameObject.transform.parent.gameObject;
+                }
+                else
+                {
+                    currentTarget = other.gameObject;
+                }
+                ActualizeMarker();
             }
             else
             {
                 currentTarget = other.gameObject;
             }
-            ActualizeMarker();
         }
     }
         
