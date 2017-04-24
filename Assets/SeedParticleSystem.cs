@@ -9,6 +9,10 @@ public class SeedParticleSystem : MonoBehaviour {
     ParticleSystem particleSystem;
     ParticleSystem.Particle[] particles;
     System.Random rngNumber;
+
+    int seedSpawn = 0;
+    public int maxSeedSpawn = 100;
+    public int SpawnRate = 20;
     //GameObject ob;
     // Use this for initialization
     void Start () {
@@ -35,19 +39,28 @@ public class SeedParticleSystem : MonoBehaviour {
             for (int i = 0; i < count; i++)
             {
                 GameObject ob;
-                if(rngNumber.Next(0,100) < 40)
+                if((rngNumber.Next(0,100) < SpawnRate) && seedSpawn <= maxSeedSpawn)
                 {
+                    seedSpawn++;
                     ob = GameObject.Instantiate(Resources.Load("zarodek") as GameObject, particles[i].position, Quaternion.identity);
                     ob.GetComponent<Rigidbody>().velocity = particles[i].velocity;
-                    Debug.Log(particles[i].velocity + " ob:" + ob.GetComponent<Rigidbody>().velocity);
                 }
-
-
-                
             }
             particleTimer = 0;
         }
         particleSystem.SetParticles(particles, count);
         
+    }
+
+    public int GetSpawnAmount()
+    {
+        return seedSpawn;
+    }
+
+    public bool IsDone()
+    {
+        if (seedSpawn <= maxSeedSpawn)
+            return false;
+        return true;
     }
 }

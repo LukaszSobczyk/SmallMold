@@ -8,8 +8,8 @@ public class VomitController : MonoBehaviour {
     
     private void OnTriggerStay(Collider other)
     {
-
-        if (other.gameObject.tag == "Infectable")
+     
+        if (other.gameObject.tag == "Infectable" && gameObject.GetComponent<SeedScoreSystem>().GetLevel() >= other.gameObject.GetComponent<InfectionController>().LevelToInfect)
         {
             if (Input.GetKey(KeyCode.E))
             {
@@ -27,12 +27,14 @@ public class VomitController : MonoBehaviour {
 
     }
 
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Infectable")
         {
             other.gameObject.GetComponent<InfectionController>().StopInfecting();
         }
+        particle.Stop();
     }
 
 }

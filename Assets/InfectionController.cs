@@ -11,8 +11,10 @@ public class InfectionController : MonoBehaviour {
     }
     InfectionState state;
     float infectionLevel;
-    float infectionTimer = 2.0f;
-    float timer = 0;
+    public int LevelToInfect = 0;
+    int maxSeedSpawn = 200;
+    int SpawnRate = 30;
+    public ParticleSystem ps;
     // Use this for initialization
     void Start () {
         infectionLevel = 0;
@@ -27,14 +29,20 @@ public class InfectionController : MonoBehaviour {
     public void Infect()
     {
         //Debug.Log(infectionLevel);
-        if (GetComponentInChildren<ParticleSystem>() != null && state == InfectionState.None)
+        if (GetComponentInChildren<ParticleSystem>() != null && state == InfectionState.None && !ps.GetComponent<SeedParticleSystem>().IsDone())
         {
             gameObject.GetComponentInChildren<ParticleSystem>().Play();
             state = InfectionState.Infecting;
         }
+        if(ps.GetComponent<SeedParticleSystem>().IsDone())
+        {
+            gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+            Debug.Log("Done");
+        }
 
-        infectionLevel+= .01f;
-        MoldingScript.ChangeMold(GetComponent<Renderer>(), infectionLevel, infectionLevel);
+
+        //infectionLevel+= .01f;
+        MoldingScript.ChangeMold(GetComponent<Renderer>(), ps.GetComponent<SeedParticleSystem>().GetSpawnAmount()/100.0f, ps.GetComponent<SeedParticleSystem>().GetSpawnAmount() / 100.0f);
     }
 
     public void StopInfecting()

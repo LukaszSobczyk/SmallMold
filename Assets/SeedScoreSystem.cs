@@ -75,4 +75,9 @@ public class SeedScoreSystem : MonoBehaviour {
             playerLevel = 4;
         }
     }
+
+    public int GetLevel()
+    {
+        return playerLevel;
+    }
 }
