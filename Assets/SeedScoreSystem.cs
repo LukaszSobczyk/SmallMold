@@ -15,7 +15,8 @@ public class SeedScoreSystem : MonoBehaviour {
     {
         collectedSeeds++;
         SetLevel();
-
+        ActualizeScoreText();
+        ActualizeMainBar();
         Debug.Log(playerLevel);
     }
 

@@ -430,6 +430,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1625242448083478
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4964865617029210}
+  m_Layer: 2
+  m_Name: camorient
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1656476014973632
 GameObject:
   m_ObjectHideFlags: 1
@@ -789,7 +804,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1041640870959212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.263, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0.263, z: 0.35}
   m_LocalScale: {x: 0.19721586, y: 0.19721575, z: 0.19721575}
   m_Children: []
   m_Father: {fileID: 4748524712083208}
@@ -947,6 +962,7 @@ Transform:
   - {fileID: 4098013455139792}
   - {fileID: 4428638932565786}
   - {fileID: 4356160574314340}
+  - {fileID: 4964865617029210}
   m_Father: {fileID: 4783251960737896}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1077,6 +1093,19 @@ Transform:
   - {fileID: 4035580636002564}
   m_Father: {fileID: 4748524712083208}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4964865617029210
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1625242448083478}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.51, z: -1.66}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4748524712083208}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20563685708361924
 Camera:
@@ -1557,7 +1586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087a8f902b9a468488c3f3ed860d816b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pivotObject: {fileID: 1844250310977428}
+  pivotObject: {fileID: 1625242448083478}
   yOffset: 0
 --- !u!114 &114193079041783006
 MonoBehaviour:
