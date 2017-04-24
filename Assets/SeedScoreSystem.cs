@@ -22,6 +22,8 @@ public class SeedScoreSystem : MonoBehaviour {
 
     void Start()
     {
+        Cursor.visible = false;
+        //Screen.showCursor = false;
         ActualizeScoreText();
         ActualizeMainBar();
     }
