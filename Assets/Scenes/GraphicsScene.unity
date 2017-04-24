@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657886, g: 0.4964127, b: 0.5748172, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -179,25 +179,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300012, guid: fe9669278993c174493d003949132ea1, type: 3}
---- !u!1 &259204448 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1560307175828136, guid: 5ae0baf8a91534c46abf295f1d261163,
-    type: 2}
-  m_PrefabInternal: {fileID: 1318564145}
---- !u!64 &259204449
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 259204448}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 671781060556a8e448fddfc30e1f6743, type: 3}
 --- !u!1 &308720746 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1593274624229750, guid: 0c5d3d2d66cbdfa49ab62ab2a8d42afb,
@@ -718,25 +699,6 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: fe9669278993c174493d003949132ea1, type: 3}
---- !u!1 &726737267 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1650410825321092, guid: 8f72ea7e8a6fb9f4db409061f1085538,
-    type: 2}
-  m_PrefabInternal: {fileID: 1875971849}
---- !u!64 &726737268
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 726737267}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
 --- !u!1 &811748745 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1164456652688004, guid: 75326fde4c116fd4fb19c7db34320b4c,
@@ -3736,10 +3698,6 @@ Prefab:
       propertyPath: m_Name
       value: egg_v1
       objectReference: {fileID: 0}
-    - target: {fileID: 1560307175828136, guid: 5ae0baf8a91534c46abf295f1d261163, type: 2}
-      propertyPath: m_TagString
-      value: Infectable
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ae0baf8a91534c46abf295f1d261163, type: 2}
   m_IsPrefabParent: 0
@@ -3890,7 +3848,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -791909351
+  randomSeed: -1415440253
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6798,15 +6756,6 @@ Prefab:
       propertyPath: m_Name
       value: strawberry_v1
       objectReference: {fileID: 0}
-    - target: {fileID: 23765709866570112, guid: 8f72ea7e8a6fb9f4db409061f1085538,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f1d044b147f44774699e3315e93ef052, type: 2}
-    - target: {fileID: 1650410825321092, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
-      propertyPath: m_TagString
-      value: Infectable
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
   m_IsPrefabParent: 0
@@ -7019,7 +6968,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 7dae3b05946f9c145b0a7a917fbeb2b3, type: 2}
+      objectReference: {fileID: 2100000, guid: b72acb84e49b12f4fa48c4ef400189dc, type: 2}
     - target: {fileID: 23883452451873858, guid: f9dbd3c9d9058794687c1ffcc1d16fcc,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
