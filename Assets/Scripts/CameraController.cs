@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
     public GameObject cameraPivot;
+    public float smoothSpeed = 5;
+
     GameObject player;
     float pitchMin = -80.0f;
     float pitchMax = 80.0f;
+
+
+    private Vector3 targetPosition;
     void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        targetPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
     }
     
     void Update()
@@ -34,5 +40,16 @@ public class CameraController : MonoBehaviour {
                 cameraPivot.transform.Rotate(y, 0, 0, Space.Self);
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            Vector3 side = transform.localPosition;
+            side.x = -side.x;
+            targetPosition = side;
+
+        }
+
+        transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, smoothSpeed * Time.deltaTime);
+
     }
 }
