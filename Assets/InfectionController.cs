@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InfectionController : MonoBehaviour {
 
-    int infectionLevel;
+    float infectionLevel;
     float infectionTimer = 2.0f;
     float timer = 0;
     // Use this for initialization
@@ -20,6 +20,7 @@ public class InfectionController : MonoBehaviour {
     public void Infect()
     {
         gameObject.GetComponentInChildren<ParticleSystem>().Play();
+        infectionLevel+= .01f;
     }
 
     public void StopInfecting()

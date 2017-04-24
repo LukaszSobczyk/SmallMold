@@ -28,7 +28,7 @@ public class SeedScoreSystem : MonoBehaviour {
     void ActualizeScoreText()
     {
         if(scoreText!=null)
-            scoreText.GetComponent<Text>().text = collectedSeeds.ToString();
+            scoreText.GetComponent<Text>().text = "Lvl. "+playerLevel.ToString();
     }
     void ActualizeMainBar()
     {

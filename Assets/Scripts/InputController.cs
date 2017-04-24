@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
     public float bodyMoveSpeed = 1.0f;
+    public float handMoveSpeed = 3.0f;
     public float lrrotationOffset = 1.0f;//y
     //public float udrotationOffset = 1.0f;//x
     //public float jumpForce = 60.0f;
@@ -61,11 +62,11 @@ public class InputController : MonoBehaviour
         #region powrot pozycji dloni
         if (!(Input.GetMouseButton(1)) && !(Input.GetMouseButtonDown(1)))
         {
-            rHand.transform.position = Vector3.MoveTowards(rHand.transform.position, transform.FindChild("RHandPos").position, bodyMoveSpeed * Time.fixedDeltaTime);
+            rHand.transform.position = Vector3.MoveTowards(rHand.transform.position, transform.FindChild("RHandPos").position, handMoveSpeed * Time.fixedDeltaTime);
         }
         if (!(Input.GetMouseButton(0)) && !(Input.GetMouseButtonDown(0)))
         {
-            lHand.transform.position = Vector3.MoveTowards(lHand.transform.position, transform.FindChild("LHandPos").position, bodyMoveSpeed * Time.fixedDeltaTime);
+            lHand.transform.position = Vector3.MoveTowards(lHand.transform.position, transform.FindChild("LHandPos").position, handMoveSpeed * Time.fixedDeltaTime);
         }
         #endregion
         HandRotation(lHand);
