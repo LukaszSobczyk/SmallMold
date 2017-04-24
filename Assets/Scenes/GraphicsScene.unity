@@ -865,23 +865,6 @@ Prefab:
       propertyPath: m_Name
       value: egg_v1
       objectReference: {fileID: 0}
-    - target: {fileID: 23532023617477252, guid: 5ae0baf8a91534c46abf295f1d261163,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: cff2dfdab114e2f41ac794a5c492b523, type: 2}
-    - target: {fileID: 4879507330497784, guid: 5ae0baf8a91534c46abf295f1d261163, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.123899385
-      objectReference: {fileID: 0}
-    - target: {fileID: 4879507330497784, guid: 5ae0baf8a91534c46abf295f1d261163, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.16356197
-      objectReference: {fileID: 0}
-    - target: {fileID: 4879507330497784, guid: 5ae0baf8a91534c46abf295f1d261163, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.22499055
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ae0baf8a91534c46abf295f1d261163, type: 2}
   m_IsPrefabParent: 0
