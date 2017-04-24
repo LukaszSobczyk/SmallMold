@@ -138,7 +138,7 @@ Material:
       second: 0
     - first:
         name: _MoldHeight
-      second: 2
+      second: 0
     - first:
         name: _MoldLevel
       second: 0.99

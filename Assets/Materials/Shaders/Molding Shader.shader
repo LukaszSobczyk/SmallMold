@@ -45,12 +45,12 @@
 			float2 uv_Occlusion;
 		};
 
-		half _Treshhold;
+		float _Treshhold;
 		half _HeightTreshhold;
 		half _Glossiness;
 		half _Metallic;
 		half _MoldLevel;
-		half _MoldHeight;
+		float _MoldHeight;
 		fixed4 _Color;
 		fixed4 _MoldColor;
 

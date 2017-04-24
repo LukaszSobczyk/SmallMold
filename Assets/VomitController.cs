@@ -11,7 +11,7 @@ public class VomitController : MonoBehaviour {
 
         if (other.gameObject.tag == "Infectable")
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKey(KeyCode.E))
             {
                 other.gameObject.GetComponent<InfectionController>().Infect();
                 particle.Play();
