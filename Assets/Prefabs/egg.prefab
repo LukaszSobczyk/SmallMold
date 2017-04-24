@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 64192455798118110}
   m_Layer: 0
   m_Name: egg
-  m_TagString: Infectable
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
