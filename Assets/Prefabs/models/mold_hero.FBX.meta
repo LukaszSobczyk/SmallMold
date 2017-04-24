@@ -26,6 +26,8 @@ ModelImporter:
     100036: Character001
     100038: Box001
     100040: Particle View 001
+    100042: Sphere001
+    100044: Sphere002
     400000: CATRigHub001
     400002: CATRigHub001Bone001
     400004: CATRigHub001Bone001Bone001
@@ -47,10 +49,21 @@ ModelImporter:
     400036: Character001
     400038: Box001
     400040: Particle View 001
+    400042: Sphere001
+    400044: Sphere002
     2300000: Box001
+    2300002: Character001
+    2300004: Sphere001
+    2300006: Sphere002
     3300000: Box001
+    3300002: Character001
+    3300004: Sphere001
+    3300006: Sphere002
     4300000: postac
     4300002: Box001
+    4300004: Character001
+    4300006: Sphere001
+    4300008: Sphere002
     7400000: idle
     7400002: walk
     7400004: catch
