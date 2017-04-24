@@ -22,9 +22,10 @@ GameObject:
   - component: {fileID: 33080132950436716}
   - component: {fileID: 23423690015343092}
   - component: {fileID: 95443079261251848}
+  - component: {fileID: 64301177697636862}
   m_Layer: 0
   m_Name: cheese
-  m_TagString: Untagged
+  m_TagString: Infectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1727178263038088}
   m_LocalRotation: {x: 0.14630486, y: -0.6918056, z: -0.6918055, w: -0.14630488}
-  m_LocalPosition: {x: -0.344, y: 2.784, z: 0.776}
+  m_LocalPosition: {x: -0.436, y: 2.76, z: 0.73}
   m_LocalScale: {x: 0.7520145, y: 0.7520145, z: 0.7520145}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,6 +80,20 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1727178263038088}
+  m_Mesh: {fileID: 4300000, guid: 303cd4e68f3b74d48b24621f1acf4a91, type: 3}
+--- !u!64 &64301177697636862
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1727178263038088}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 303cd4e68f3b74d48b24621f1acf4a91, type: 3}
 --- !u!95 &95443079261251848
 Animator:
