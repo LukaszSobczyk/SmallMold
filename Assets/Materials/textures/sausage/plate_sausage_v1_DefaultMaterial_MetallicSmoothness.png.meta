@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Materials/textures/sausage/plate_sausage_v1_DefaultMaterial_MetallicSmoothness.png.meta
 guid: 58ab6a2a84cce074eba7fe8b3e78da8f
 timeCreated: 1492998876
+=======
+guid: ad956e51404bf0544aa288ef5c76486f
+timeCreated: 1492965001
+>>>>>>> f4820f58f6c2d7a87678b4239b0c2ae47ae1e061:Assets/Materials/textures/sausage/plate_sausage_v1_DefaultMaterial_MetallicSmoothness.png.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
