@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PositionCorrector : MonoBehaviour {
-    public GameObject pivotObject;
-    public float yOffset;
-	// Update is called once per frame
-	void Update ()
+    public Transform player;
+    private Vector3 offset;
+    // Update is called once per frame
+
+    private void Awake()
     {
-        this.transform.position = new Vector3(pivotObject.transform.position.x, pivotObject.transform.position.y+yOffset, pivotObject.transform.position.z);
+        offset = transform.position - player.position;
+    }
+
+    void Update ()
+    {
+        transform.position = player.transform.position + offset;
+
 	}
 }
