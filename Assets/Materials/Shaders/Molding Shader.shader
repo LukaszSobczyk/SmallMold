@@ -5,7 +5,7 @@
 		_Normal ("Normal", 2D) = "bump" {}
 		_Occlusion ("Occlusion", 2D) = "white" {}
 		_MoldMask ("Mold Mask", 2D) = "white" {}
-		_MoldLevel("Mold Level", Range(0,0.99)) = 0.0
+		_MoldLevel("Mold Level", Range(0,0.99)) = 0.99
 		_MoldHeight("Mold height", Range(0,2)) = 0.0
 		_MoldColor ("Mold Color", Color) = (1,1,1,1)
 		_MoldTex ("Mold Texture", 2D) = "white" {}
@@ -13,7 +13,7 @@
 		_Glossiness ("Smoothness", Range(0,1)) = 0.5
 		_MetallicMap ("Metallic", 2D) = "white" {}
 		_Metallic ("Metallic", Range(0,1)) = 0.0
-		_Treshhold ("Treshhold", Range(0,1)) = 0.0
+		_Treshhold ("Treshhold", Range(0,1)) = 0.5
 		_HeightTreshhold("Height Treshhold", Range(0,1)) = 0.0
 	}
 	SubShader {
