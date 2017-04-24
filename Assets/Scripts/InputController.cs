@@ -37,12 +37,14 @@ public class InputController : MonoBehaviour
         {
             InputResult(lHand);
             rigi.useGravity = false;
+            this.GetComponent<AudioSource>().Play();
             CatchAnim();
         }
         if (Input.GetMouseButtonDown(1))
         {
             InputResult(rHand);
             rigi.useGravity = false;
+            this.GetComponent<AudioSource>().Play();
             CatchAnim();
         }
         if ((Input.GetMouseButton(0) || Input.GetMouseButton(1)) && !rigi.useGravity)
