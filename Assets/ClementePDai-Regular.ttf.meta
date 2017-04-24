@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: eec91a59e6fca9343a023403906263ff
+timeCreated: 1493055240
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: ClementePDai
+  fontNames:
+  - ClementePDai
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
