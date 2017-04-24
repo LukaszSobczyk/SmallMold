@@ -11,10 +11,14 @@ public class InputController : MonoBehaviour
     //public float jumpForce = 60.0f;
     public float catchDistance = 1.0f;
 
+    public float movementSpeed = 1;
+    public float rotationSpeed = 1;
+
     private Rigidbody rigi;
     private GameObject lHand;
     private GameObject rHand;
 
+    private bool isWalking = false;
 
     private float distanceFromPoint;
     //LineRenderer dupa;
@@ -74,6 +78,44 @@ public class InputController : MonoBehaviour
         HandRotation(lHand);
         HandRotation(rHand);
         RotationCorrection();
+
+        #region chodzenie
+        if(Input.GetKey(KeyCode.W))
+        {
+            rigi.AddForce(transform.forward * movementSpeed);
+            rigi.rotation = Quaternion.Lerp(rigi.rotation, Camera.main.transform.rotation, Time.deltaTime * rotationSpeed);
+            transform.FindChild("mold_hero").GetComponent<Animator>().SetBool("Direction", false);
+            isWalking = true;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            rigi.AddForce(-Camera.main.transform.forward * movementSpeed);
+            rigi.rotation = Quaternion.Lerp(rigi.rotation, Camera.main.transform.rotation, Time.deltaTime);
+            transform.FindChild("mold_hero").GetComponent<Animator>().SetBool("Direction", true);
+            isWalking = true;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            rigi.AddForce(-Camera.main.transform.right * movementSpeed);
+            rigi.rotation = Quaternion.Lerp(rigi.rotation, Camera.main.transform.rotation, Time.deltaTime);
+            transform.FindChild("mold_hero").GetComponent<Animator>().SetBool("Direction", false);
+            isWalking = true;
+
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            rigi.AddForce(Camera.main.transform.right * movementSpeed);
+            rigi.rotation = Quaternion.Lerp(rigi.rotation, Camera.main.transform.rotation, Time.deltaTime);
+            transform.FindChild("mold_hero").GetComponent<Animator>().SetBool("Direction", true);
+            isWalking = true;
+        }
+
+        if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S) && !Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+        {
+            isWalking = false;
+        }
+        WalkAnim(isWalking);
+        #endregion
     }
     void RotationCorrection()
     {
@@ -160,5 +202,9 @@ public class InputController : MonoBehaviour
     void IdleAnim()
     {
         transform.FindChild("mold_hero").GetComponent<Animator>().SetBool("Holding", false);
+    }
+    void WalkAnim(bool walking)
+    {
+        transform.FindChild("mold_hero").GetComponent<Animator>().SetBool("Walking", walking);
     }
 }
