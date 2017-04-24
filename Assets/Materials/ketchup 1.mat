@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pizza
+  m_Name: ketchup 1
   m_Shader: {fileID: 4800000, guid: 6e8892ea14182d545bbd957b09321cbf, type: 3}
-  m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
+  m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -18,7 +18,7 @@ Material:
     - first:
         name: _BumpMap
       second:
-        m_Texture: {fileID: 2800000, guid: d309df81499959e4a8424da9a366cb0b, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -48,13 +48,13 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: b4e211abf198c67439e0f78f2e56f78c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7d6224a43b9086842bb7c922e8a696f6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MetallicGlossMap
       second:
-        m_Texture: {fileID: 2800000, guid: 98649427c0d905844ad769aee5902404, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -78,19 +78,19 @@ Material:
     - first:
         name: _Normal
       second:
-        m_Texture: {fileID: 2800000, guid: d309df81499959e4a8424da9a366cb0b, type: 3}
+        m_Texture: {fileID: 2800000, guid: d3e6041b6c9130641a1e70fd9d478426, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _Occlusion
       second:
-        m_Texture: {fileID: 2800000, guid: c8d4594e56877e7479a585fabe264865, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _OcclusionMap
       second:
-        m_Texture: {fileID: 2800000, guid: c8d4594e56877e7479a585fabe264865, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -102,7 +102,13 @@ Material:
     - first:
         name: _PositionMap
       second:
-        m_Texture: {fileID: 2800000, guid: 59374316a7a426446a7520a151f34437, type: 3}
+        m_Texture: {fileID: 2800000, guid: a298706630bf83443b3e9b075ba7a4c5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - first:
+        name: _SpecGlossMap
+      second:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -123,7 +129,7 @@ Material:
       second: 1
     - first:
         name: _Glossiness
-      second: 0.269
+      second: 0.5
     - first:
         name: _GlossyReflections
       second: 1
@@ -132,7 +138,7 @@ Material:
       second: 0
     - first:
         name: _Metallic
-      second: 0.182
+      second: 0
     - first:
         name: _Mode
       second: 0
@@ -169,10 +175,13 @@ Material:
     m_Colors:
     - first:
         name: _Color
-      second: {r: 1, g: 1, b: 1, a: 1}
+      second: {r: 1, g: 0, b: 0, a: 1}
     - first:
         name: _EmissionColor
       second: {r: 0, g: 0, b: 0, a: 1}
     - first:
         name: _MoldColor
       second: {r: 1, g: 1, b: 1, a: 1}
+    - first:
+        name: _SpecColor
+      second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
