@@ -22,7 +22,7 @@ public class FloatingSeed : MonoBehaviour {
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Infectable" && state == SeedState.Falling)
+        if ((other.gameObject.tag == "Infectable" || other.gameObject.tag == "Enviroment") && state == SeedState.Falling)
         {
             gameObject.GetComponent<Rigidbody>().useGravity = false;
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
