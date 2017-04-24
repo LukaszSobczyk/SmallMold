@@ -21,9 +21,11 @@ GameObject:
   - component: {fileID: 4608402574661460}
   - component: {fileID: 33091559838785284}
   - component: {fileID: 23765709866570112}
+  - component: {fileID: 64401477822471942}
+  - component: {fileID: 114500048073023772}
   m_Layer: 0
   m_Name: Cylinder001
-  m_TagString: Untagged
+  m_TagString: Infectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,10 +56,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4915473860381318}
   - component: {fileID: 95721437275716990}
-  - component: {fileID: 64090534579982398}
   m_Layer: 0
   m_Name: strawberry
-  m_TagString: Infectable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -179,12 +180,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1286538766464406}
   m_Mesh: {fileID: 4300002, guid: 66854369497bb2a4996c1343d7932f1c, type: 3}
---- !u!64 &64090534579982398
+--- !u!64 &64401477822471942
 MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1650410825321092}
+  m_GameObject: {fileID: 1019589258459174}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -192,7 +193,7 @@ MeshCollider:
   m_Convex: 0
   m_InflateMesh: 0
   m_SkinWidth: 0.01
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 4300000, guid: 66854369497bb2a4996c1343d7932f1c, type: 3}
 --- !u!95 &95721437275716990
 Animator:
   serializedVersion: 3
@@ -210,3 +211,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114500048073023772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1019589258459174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a1639b4dac0ab4982b8e6b3e7f5fc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

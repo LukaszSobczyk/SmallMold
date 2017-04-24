@@ -10,6 +10,8 @@ public class MoldingScript {
         //rend.material.SetFloat("_Treshhold", 0.5f);
         rend.material.SetFloat("_MoldHeight", 2 * moldHeight);
         if(rend.material.GetFloat("_MoldHeight") >= 2)
+
+            
         {
             rend.material.SetFloat("_MoldHeight", 2);
             if (rend.material.GetFloat("_Treshhold") >= 0)
@@ -17,7 +19,5 @@ public class MoldingScript {
                 rend.material.SetFloat("_Treshhold", rend.material.GetFloat("_Treshhold") - 0.1f * Time.deltaTime);
             }
         }
-        Debug.Log("treshold" + rend.material.GetFloat("_Treshhold"));
-        Debug.Log("height:" + rend.material.GetFloat("_MoldHeight"));
     }
 }

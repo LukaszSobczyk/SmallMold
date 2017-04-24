@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4487434858769600}
   - component: {fileID: 33463124450363238}
   - component: {fileID: 23924143382973600}
+  - component: {fileID: 64306077517960084}
   m_Layer: 0
   m_Name: milk_box
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,9 +55,10 @@ GameObject:
   - component: {fileID: 4190534762656508}
   - component: {fileID: 33103905195537596}
   - component: {fileID: 23114998446385784}
+  - component: {fileID: 64165752805238686}
   m_Layer: 0
   m_Name: korek
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,6 +179,34 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1084752072234664}
+  m_Mesh: {fileID: 4300000, guid: c6d21b63b32967a41be41a7496c95f83, type: 3}
+--- !u!64 &64165752805238686
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474922582464012}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: c6d21b63b32967a41be41a7496c95f83, type: 3}
+--- !u!64 &64306077517960084
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1084752072234664}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: c6d21b63b32967a41be41a7496c95f83, type: 3}
 --- !u!95 &95531703538504796
 Animator:

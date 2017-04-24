@@ -20,13 +20,15 @@ public class InfectionController : MonoBehaviour {
     public void Infect()
     {
         //Debug.Log(infectionLevel);
-        gameObject.GetComponentInChildren<ParticleSystem>().Play();
+        if (GetComponentInChildren<ParticleSystem>() != null)
+            gameObject.GetComponentInChildren<ParticleSystem>().Play();
         infectionLevel+= .01f;
         MoldingScript.ChangeMold(GetComponent<Renderer>(), infectionLevel, infectionLevel);
     }
 
     public void StopInfecting()
     {
-        gameObject.GetComponentInChildren<ParticleSystem>().Stop();
+        if(GetComponentInChildren<ParticleSystem>() != null)
+            gameObject.GetComponentInChildren<ParticleSystem>().Stop();
     }
 }
