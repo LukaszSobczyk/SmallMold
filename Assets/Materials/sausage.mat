@@ -48,7 +48,7 @@ Material:
     - first:
         name: _MainTex
       second:
-        m_Texture: {fileID: 2800000, guid: f0e4a355e5902cd48b9b7c4dd90e59af, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8d575a0de92ace341aa93f1695222352, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -67,7 +67,7 @@ Material:
         name: _MoldMask
       second:
         m_Texture: {fileID: 2800000, guid: 1cf114a5c5d824f4a9ad4d86ce1dd272, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 2.5, y: 2.5}
         m_Offset: {x: 0, y: 0}
     - first:
         name: _MoldTex
@@ -84,7 +84,7 @@ Material:
     - first:
         name: _Occlusion
       second:
-        m_Texture: {fileID: 2800000, guid: 0000f9346604b9e419534dffc5922305, type: 3}
+        m_Texture: {fileID: 2800000, guid: 364a1c84eb872994f9cd2d95eb5cd74d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - first:
@@ -102,7 +102,7 @@ Material:
     - first:
         name: _PositionMap
       second:
-        m_Texture: {fileID: 2800000, guid: c4a0b105974d34748979975cd2f5ef4c, type: 3}
+        m_Texture: {fileID: 2800000, guid: d813f096ca95e7c408814f056eece541, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -138,7 +138,7 @@ Material:
       second: 0
     - first:
         name: _MoldHeight
-      second: 2
+      second: 0
     - first:
         name: _MoldLevel
       second: 0.99
@@ -159,7 +159,7 @@ Material:
       second: 1
     - first:
         name: _Treshhold
-      second: 0
+      second: 0.5
     - first:
         name: _UVSec
       second: 0
