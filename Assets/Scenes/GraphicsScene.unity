@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
+  m_AmbientSkyColor: {r: 0.25, g: 0.25, b: 0.25, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
@@ -1884,7 +1884,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1019589258459174, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
       propertyPath: m_TagString
-      value: Enviroment
+      value: Infectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
@@ -2123,7 +2123,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1019589258459174, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
       propertyPath: m_TagString
-      value: Enviroment
+      value: Infectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
@@ -2996,7 +2996,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1019589258459174, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
       propertyPath: m_TagString
-      value: Enviroment
+      value: Infectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
@@ -3457,7 +3457,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1019589258459174, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
       propertyPath: m_TagString
-      value: Enviroment
+      value: Infectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
@@ -3568,7 +3568,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1019589258459174, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
       propertyPath: m_TagString
-      value: Enviroment
+      value: Infectable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
