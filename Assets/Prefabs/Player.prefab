@@ -1819,7 +1819,7 @@ MonoBehaviour:
   bodyMoveSpeed: 0.7
   handMoveSpeed: 2
   lrrotationOffset: 30
-  catchDistance: 1
+  catchDistance: 10
   movementSpeed: 5
   rotationSpeed: 2
 --- !u!114 &114316478750094826

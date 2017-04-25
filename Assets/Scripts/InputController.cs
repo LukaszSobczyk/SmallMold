@@ -174,7 +174,7 @@ public class InputController : MonoBehaviour
     void InputResult(GameObject hand)
     {
         RaycastHit hit;
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit))
+        if (Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Screen.width /2, Screen.height / 2)), out hit))
         {
             if (hit.collider.CompareTag("Enviroment") || hit.collider.CompareTag("Infectable"))
             {
