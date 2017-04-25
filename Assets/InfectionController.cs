@@ -42,7 +42,7 @@ public class InfectionController : MonoBehaviour {
 
 
         //infectionLevel+= .01f;
-        MoldingScript.ChangeMold(GetComponent<Renderer>(), ps.GetComponent<SeedParticleSystem>().GetSpawnAmount()/100.0f, ps.GetComponent<SeedParticleSystem>().GetSpawnAmount() / 100.0f);
+        MoldingScript.ChangeMold(GetComponent<Renderer>(), ps.GetComponent<SeedParticleSystem>().GetSpawnedPercentage(), ps.GetComponent<SeedParticleSystem>().GetSpawnedPercentage());
     }
 
     public void StopInfecting()

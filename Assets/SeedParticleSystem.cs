@@ -57,6 +57,11 @@ public class SeedParticleSystem : MonoBehaviour {
         return seedSpawn;
     }
 
+    public float GetSpawnedPercentage()
+    {
+        return seedSpawn / (float)maxSeedSpawn;
+    }
+
     public bool IsDone()
     {
         if (seedSpawn <= maxSeedSpawn)

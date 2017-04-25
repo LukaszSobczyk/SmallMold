@@ -17,7 +17,7 @@ public class SeedScoreSystem : MonoBehaviour {
         SetLevel();
         ActualizeScoreText();
         ActualizeMainBar();
-        Debug.Log(playerLevel);
+        //Debug.Log(playerLevel);
     }
 
     void Start()
