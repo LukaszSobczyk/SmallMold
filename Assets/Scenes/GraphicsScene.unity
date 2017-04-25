@@ -1710,11 +1710,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4629950810588544, guid: fd3e4dc1aa60ceb4dba253d7c1fe80a5, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.49
+      value: 0.79
       objectReference: {fileID: 0}
     - target: {fileID: 4629950810588544, guid: fd3e4dc1aa60ceb4dba253d7c1fe80a5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.6964
+      value: 0.378
       objectReference: {fileID: 0}
     - target: {fileID: 4629950810588544, guid: fd3e4dc1aa60ceb4dba253d7c1fe80a5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -1923,6 +1923,10 @@ Prefab:
     - target: {fileID: 1650410825321092, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
       propertyPath: m_Name
       value: strawberry_v1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019589258459174, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
+      propertyPath: m_TagString
+      value: Enviroment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
@@ -2158,6 +2162,10 @@ Prefab:
     - target: {fileID: 1650410825321092, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
       propertyPath: m_Name
       value: strawberry_v1 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019589258459174, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
+      propertyPath: m_TagString
+      value: Enviroment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
@@ -2971,6 +2979,10 @@ Prefab:
       propertyPath: m_Name
       value: strawberry_v1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1019589258459174, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
+      propertyPath: m_TagString
+      value: Enviroment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
   m_IsPrefabParent: 0
@@ -3428,6 +3440,10 @@ Prefab:
       propertyPath: m_Name
       value: strawberry_v1
       objectReference: {fileID: 0}
+    - target: {fileID: 1019589258459174, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
+      propertyPath: m_TagString
+      value: Enviroment
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
   m_IsPrefabParent: 0
@@ -3534,6 +3550,10 @@ Prefab:
     - target: {fileID: 1650410825321092, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
       propertyPath: m_Name
       value: strawberry_v1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1019589258459174, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
+      propertyPath: m_TagString
+      value: Enviroment
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f72ea7e8a6fb9f4db409061f1085538, type: 2}
