@@ -1803,6 +1803,8 @@ MonoBehaviour:
   handMoveSpeed: 2
   lrrotationOffset: 30
   catchDistance: 1
+  movementSpeed: 5
+  rotationSpeed: 2
 --- !u!114 &114316478750094826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2046,7 +2048,7 @@ SphereCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1844250310977428}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1ca889ad142fed348a22dd51abcd39d8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

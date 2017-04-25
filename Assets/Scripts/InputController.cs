@@ -83,29 +83,29 @@ public class InputController : MonoBehaviour
         if(Input.GetKey(KeyCode.W))
         {
             rigi.AddForce(transform.forward * movementSpeed);
-            rigi.rotation = Quaternion.Lerp(rigi.rotation, Camera.main.transform.rotation, Time.deltaTime * rotationSpeed);
+            rigi.rotation = Quaternion.Lerp(rigi.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, Camera.main.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z), Time.deltaTime * rotationSpeed);
             transform.FindChild("mold_hero").GetComponent<Animator>().SetBool("Direction", false);
             isWalking = true;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            rigi.AddForce(-Camera.main.transform.forward * movementSpeed);
-            rigi.rotation = Quaternion.Lerp(rigi.rotation, Camera.main.transform.rotation, Time.deltaTime);
+            rigi.AddForce(-transform.forward * movementSpeed);
+            rigi.rotation = Quaternion.Lerp(rigi.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, Camera.main.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z), Time.deltaTime * rotationSpeed);
             transform.FindChild("mold_hero").GetComponent<Animator>().SetBool("Direction", true);
             isWalking = true;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rigi.AddForce(-Camera.main.transform.right * movementSpeed);
-            rigi.rotation = Quaternion.Lerp(rigi.rotation, Camera.main.transform.rotation, Time.deltaTime);
+            rigi.AddForce(-transform.right * movementSpeed);
+            rigi.rotation = Quaternion.Lerp(rigi.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, Camera.main.transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z), Time.deltaTime * rotationSpeed);
             transform.FindChild("mold_hero").GetComponent<Animator>().SetBool("Direction", false);
             isWalking = true;
 
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rigi.AddForce(Camera.main.transform.right * movementSpeed);
-            rigi.rotation = Quaternion.Lerp(rigi.rotation, Camera.main.transform.rotation, Time.deltaTime);
+            rigi.AddForce(transform.right * movementSpeed);
+            rigi.rotation = Quaternion.Lerp(rigi.rotation, Quaternion.Euler(transform.rotation.eulerAngles.x, Camera.main.transform.rotation.eulerAngles.y,transform.rotation.eulerAngles.z), Time.deltaTime * rotationSpeed);
             transform.FindChild("mold_hero").GetComponent<Animator>().SetBool("Direction", true);
             isWalking = true;
         }
@@ -134,7 +134,7 @@ public class InputController : MonoBehaviour
             transform.LookAt(targetDir);
             transform.Rotate(new Vector3(0.0f, -lrrotationOffset, 0.0f));
         }
-        else
+        else if(Input.GetMouseButton(0) && Input.GetMouseButton(1))
         {
             //obie
             targetDir = (lHand.transform.position + rHand.transform.position) / 2.0f;

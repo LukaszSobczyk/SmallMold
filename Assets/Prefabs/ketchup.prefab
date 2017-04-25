@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4144775867950654}
   - component: {fileID: 33877084485190924}
   - component: {fileID: 23379404923996162}
+  - component: {fileID: 64362108791123120}
   m_Layer: 0
   m_Name: pokrywka
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,9 +55,10 @@ GameObject:
   - component: {fileID: 4787636922545656}
   - component: {fileID: 33235447790417674}
   - component: {fileID: 23185519417980544}
+  - component: {fileID: 64407804864454826}
   m_Layer: 0
   m_Name: zawias
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,9 +91,10 @@ GameObject:
   - component: {fileID: 4637786388239446}
   - component: {fileID: 33453010832526146}
   - component: {fileID: 23610178132506100}
+  - component: {fileID: 64512459450891982}
   m_Layer: 0
   m_Name: zakretka
-  m_TagString: Untagged
+  m_TagString: Enviroment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,6 +320,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1122243253062548}
   m_Mesh: {fileID: 4300004, guid: bbc2a24cfaa8aaa49adcec18c6dcf0b8, type: 3}
+--- !u!64 &64362108791123120
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1122243253062548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300004, guid: bbc2a24cfaa8aaa49adcec18c6dcf0b8, type: 3}
+--- !u!64 &64407804864454826
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1407874545267248}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300006, guid: bbc2a24cfaa8aaa49adcec18c6dcf0b8, type: 3}
+--- !u!64 &64512459450891982
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1568349186335310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300002, guid: bbc2a24cfaa8aaa49adcec18c6dcf0b8, type: 3}
 --- !u!64 &64929093238773398
 MeshCollider:
   m_ObjectHideFlags: 1
